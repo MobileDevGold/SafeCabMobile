@@ -1,0 +1,66 @@
+<ion-view view-title="{{ friend.name }}">
+<ion-nav-buttons side="left">
+	<button class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="CheckUserIsOnline()">
+    </button>
+ </ion-nav-buttons>
+  <ion-nav-title>
+        <h3 style="color:#FF9600;margin-top:10px;">Safe Cab</h3>
+  </ion-nav-title>
+  <ion-nav-buttons side="right">
+     <a class="button button-icon icon ion-compose" ng-click="openPopup()">
+	 </a>
+  </ion-nav-buttons>
+ <ion-content has-header="true" has-footer="true" padding="true" on-swipe-left="onSwipeLeft();" on-swipe-right="onSwipeRight();">
+	     <h1 style="text-align:center;">SafeCab Network</h1>
+            <p class="center">By using the Internet, Voice, SMS, Social Networks and smart phones with GPS we are able to deliver all the information required in an instant. Through our collaborations and cloud based technologies we aim to provide a new way of seeing local cabs and enabling them to deliver a better level of service.</p>
+
+            <h3>PASSENGERS</h3>
+            <div style="margin-bottom:10px;">
+                <p>SafeCab is a free service provided exclusively for you the passenger on any platform (Voice, SMS, Smart App and Web). Our aim is to get you home safely on time with the minimum amount of effort. This includes : </p>
+                <ul>
+                    <li>Instantly find local firms no matter where you are.</li>
+                    <li>Rate your driver and view their previous ratings.</li>
+                    <li>Review previous bookings.</li>
+                    <li>Define emergency contacts and allow them to see your journey home.</li>
+                    <li>We can track you walking home to provide that extra level of comfort.</li>
+                    <li>No need for smart apps we can work with any mobile phone.</li>
+                </ul>
+                <p>Security: This is our number one concern. Not only do we provide you a verified list**, user defined rating but where possible we can track your handsets (smart app or SMS) along the journey. If the cab is not a member of SafeCab no problem you can still take photos and upload them on route - this service is built for you. If you find yourself in a bad situation we can connect you with your emergency contacts via smart app or phone call.</p>
+                <p>Favourites: We understand people will always have favourite firms and we aim to enhance that. Simply mark your favourites and we will contact them first for you before we move on to others.</p>
+                <p>Availability: We will be running a national campaign over the next few weeks and contacting taxi firms around the country. If you don't find <a href="#">your local taxi cab</a> ask them why, <a href="#contact">Contact Us</a> with their details or better still ask them to give us a call on 0800 8886006. </p>
+                <p>** Bronze companies will be shown where there are not enough verified firms.</p>
+            </div>
+
+            <h3>CAB FIRMS</h3>
+            <div style="margin-bottom:10px;">
+                <p> By using smart location services passenger can connect to your company on a number of platforms (Voice, SMS, Smart App, Facebook and Web). By promoting verified firms by rating as well as the users favourites we can instantly connect your potential customers to your dispatchers. No extra hardware is required we will call you on your main number and if you wish to accept the job we will do the rest. If you wish to chat to them not a problem we will instantly connect you both. Use our website and smart app if you wish - the choice is yours.</p>
+
+                <p>Preregistered: With over 22,000 Pre-registered UK taxi firms you are only a few clicks away from being available on one of the fastest growing networks. When you sign up you will instantly be available on any platform for the next 12 months. Gold and Silver firms will be sent a passcode to verify the address. Drivers wishing to be tracked need only connect with a verified firm (either by voice, smart phone or web). Download our free software and they will be up and running in minutes / no smart phone not a problem simply SMS us when you are free and we will track your location.</p>
+
+                <p>Listing: These will be shown as either Bronze (free listing), Silver (Verified) and Gold (Verified with the ability to pick up bookings). If you allow us to track your cabs (by SMS or Smart App) we will also show these allowing users to see free cabs in their area but connect to your dispatch number.</p>
+
+                <p>Security: With attacks on drivers rising knowing the user upfront can only be a good thing. All our users are verified (email or mobile) and by simply marking them as non-payers or rating them for their bad behaviour other drivers will see this instantly and they may be suspended making it much more difficult for them to get a cab in the future. If your Cabs are tracked by us we can also pin point theirlocation within the past minute and their movement throughout the day. By hitting the emergency button as well as informing your company so the police can be called all taxis and firms in a 1 mile radius will be alerted to your SOS. We will work with you and the police in every instance to stop violence towards your drivers.</p>
+            </div>
+
+            <h3>EXPERT IN TAXIS</h3>
+            <div style="margin-bottom:30px;">
+			   <p>Industry Expert: If you believe you can offer others just starting out words of advice why not contact us. We are aiming to put together a number of key industry experts to help in areas such as Law, Finance and future trends.</p>
+
+                <p>Operating for a number of years: In this day experience counts for everything. We are aiming to put together a number of key speakers to provide the kind of information you can only gain through years of experience.</p>
+
+                <p>Please <a href="#contact">Contact Us</a> today if you can help.</p>
+            </div>
+	</ion-content>
+	<div class="bar bar-footer row tab-buttons-bar">
+		<div class="tabs tabs-icon-top " >
+		  <a class="tab-item" href="#/app/map" style="color:#FF9600;font-size:15px;">
+			<i class="icon ion-home"></i>
+			Map
+		  </a>
+		   <a class="tab-item" href="#/app/features" style="color:#FF9600;font-size:15px;">
+			<i class="icon ion-star"></i>
+			Features
+		  </a>
+		</div>
+    </div>
+</ion-view>

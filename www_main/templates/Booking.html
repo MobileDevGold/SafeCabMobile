@@ -1,0 +1,298 @@
+<ion-view>
+ <ion-nav-buttons side="left">
+	<button class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="CheckUserIsOnline()">
+    </button>
+ </ion-nav-buttons>
+  <ion-nav-title>
+      <h3 style="color:#FF9600;margin-top:10px;">Bookings</h3>
+  </ion-nav-title>
+  <ion-nav-buttons side="right">
+     <!-- <button class="button active" ng-click="data.showDelete = false; data.showReorder = !data.showReorder"  ng-class="showReorder ? 'active' : ''">Sort</button> -->
+  </ion-nav-buttons>
+	
+  <ion-content style="height: 85%;">
+  <div class="DivMainBookingList">
+	  <div class="DivBookingList">
+	<ion-list  option-buttons="itemButtons" can-swipe="false" show-delete="data.showDelete" show-reorder="data.showReorder">
+	  <ion-item ng-repeat="booking in BookingData">
+	
+		<div class="item-options-left" ng-show="showEdit">
+			<i class="icon ion-minus-circled">Edit</i>
+	    </div>
+		<a  ng-click="onBookingEdit(booking.BookingId)">
+			<div class="imgRounded fl" style="display: block;width: 40px;background: url('img/New_bits/PhotoBackground.png');height: 35px;text-align: center;background-size: 40px;">
+				<img style="width:30px;height:30px;" ng-src="{{booking.BookingImageId}}" />
+			</div>
+			<span>{{ booking.address }}</span>
+		</a>
+		 <ion-option-button class="button-assertive" ng-click="onBookingEdit(booking)">
+			<i class="icon ion-wrench">Edit</i>
+		</ion-option-button>
+	
+		  <!--<ion-option-button class="button-assertive">Edit</ion-option-button>-->
+          <ion-reorder-button class="ion-navicon" on-reorder="reorderItem(booking, $fromIndex, $toIndex)"></ion-reorder-button>
+	  </ion-item>
+	</ion-list>
+	</div> 
+	<div class="DivBookingDetailView hide" style="margin-bottom:65px;">
+		<a ng-click="BackToBookingPage()" class="linkCancel">Back</a>
+		<div class="DivDisplayBookingHistoryDataErrorMessage error textcenter hide">
+            </div>
+			<div style="padding:5px;">
+            <div class="fl" style="margin-bottom: 0px;">
+            <input type="hidden" class="hiddenStartLat" />
+            <input type="hidden" class="hiddenStartLng" />
+                <div class="fl">
+                    <div class="fl">
+                        <div class="imgRoundedBookingHistoryDiv fl" >
+                            <img src="" id="btnBookingHistoryPersonImage" name="btnBookingHistoryPersonImage"
+                                class="PinPopUpDescriptionWindowImage" style="cursor: pointer; margin: 10px auto;">
+                        </div>
+                        <div class="fl">
+                            <input type="button" class="btnyellow" id="btnshowMap" ng-click="ShowBookingHistoryMap()" name="btnshowMap"  value="Show map" style="margin-top:30px;" />
+							<input type="button" class="btnyellow btnQuoteList" id="btnshowCabList" ng-click="ShowCabListMap()" name="btnshowCabList"   value="Cab list" style="margin-top:30px;margin-left:5px;" />
+							<div class="clear"></div>
+							 <input type='button' class='btnyellow fl btnBookingHistoryDivFavourites hide' value='Add to Favourites'
+                            style="float: none; margin: 5px 0px 0px 2px;" onclick="ClickFavouritesStuff()" />
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="clear"></div>
+				 <div class="DivFeedBack">
+                    <div class="fr Div_Picked_and_Noshow hide" style="margin-right: 52px;">
+                        <input type="button" id="btnBookingNonShow" class="btnyellow fr" name="btnBookingNonShow"
+                            value="No Show" style="margin: 3px;"  ng-click='CallNowShow()'/>
+                        <input type="button" id="btnBookingTrackNow" class="btnyellow fr" name="btnBookingTrackNow"
+                            value="Picked Up" style="margin: 3px;" ng-click='CallPickedUp()' />
+                    </div>
+                    <div class="fr Div_Arrived hide" style="margin: 0px 52px 0px 0px;">
+                        <input type="button" id="btnBookingArrived" class="btnyellow" name="btnBookingArrived"
+                            value="Arrived" style="margin: 3px;" ng-click='CallArrived()' />
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+                <div>
+                    <div class="div_Booking_img fl">
+                        <img src="https://www.safecab.com/DATA/images/Map_pins/start_flag.png" class="div_Booking_imgwidth fl" />
+                    </div>
+                    <div class="fl BoxIndentedStyle padding5 txtBookingHistoryFromToDate" id="txtBookingHistoryFromAddress"
+                        name="txtBookingHistoryFromAddress" title="" style="margin-bottom: 0px !important;width:250px;">
+                    </div>
+                    <div class="clear"></div>
+                    <div style="margin-top:5px;">
+                    <div class="div_Booking_img fl">
+                        <img src="https://www.safecab.com/DATA/images/Map_pins/end_flag.png" class="div_Booking_imgwidth fl" />
+                    </div>
+                    <div class="fl BoxIndentedStyle padding5 txtBookingHistoryFromToDate" id="txtBookingHistoryToAddress"
+                        name="txtBookingHistoryToAddress" style="width:250px;">
+                    </div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div class="fl BoxIndentedStyle padding5 txtBookingHistoryNotes txtBookingHistoryFromToDate"
+                        style="margin-left: 43px; width: 200px;">
+                    </div>
+                     <div class="clear"></div>
+                </div>
+                 <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+            <div>
+                <div>
+                    <div class="div_Booking_img fl">
+                        <img src="https://www.safecab.com/DATA/images/New_bits/date_small.png" class="div_Booking_imgwidth paddingLeft5" />
+                    </div>
+                    <div class="fl paddingLeft5 BoxIndentedStyle padding5 BookingListTextWidth" id="txtBookingHistoryDateTime"
+                        name="txtBookingHistoryDateTime" style="margin-left: 8px;">
+                    </div>
+                </div>
+                <div class="clear paddingLeft5">
+                </div>
+                <div>
+                    <div class="div_Booking_img fl">
+                        <img src="https://www.safecab.com/DATA/images/New_bits/number_of_passengers.png" class="div_Booking_imgwidth"
+                            alt="" />
+                    </div>
+                    <div class="fl paddingLeft5 BoxIndentedStyle padding5 BookingListTextWidth" id="txtBookingHistoryPassengersType"
+                        name="txtBookingHistoryPassengersType" style="margin-left: 10px;">
+                    </div>
+                </div>
+                <div class="clear">
+                </div>
+                <!-- -->
+                <div class="div-form-element-control paddingLeft5" style="width: 175px;">
+                    <div class="DivPassengerHistoryBookingDisableAccess" to="on" style="height: 30px;">
+                        <label style="margin: 0px !important; padding: 7px !important; color: Gray;" for="chkPopDisableAccess">
+                            Disabled Access</label></div>
+                </div>
+                <div class="clear">
+                </div>
+                <div class="div-form-element-control" style="width: 151px;">
+                    <div class="DivPassengerHistoryBookingFemaleDriver" to="on" style="height: 30px;">
+                        <label style="margin: 0px !important; padding: 7px !important; color: Gray;" for="chkPopFemaleDriver">
+                            Female Driver</label></div>
+                </div>
+                <div class="clear">
+                </div>
+                <div class="div-form-element-control" style="width: auto;">
+                    <label class="fl" style="margin: 0px !important; padding: 7px 0px 0px 0px !important;"
+                        for="chkPopFemaleDriver">
+                        Status:</label>
+                    <div class="fl BoxIndentedStyle divBookingHistoryText BookingListTextWidth" style="margin-left: 8px;">
+                    </div>
+                </div>
+                 <div class="clear">
+                </div>
+                <div class="div-form-element-control DivEstimatedCost">
+                    <label class="fl" style="margin: 0px !important; padding: 7px 0px 0px 0px !important;"
+                        for="txtBookingExpectedCost">
+                        Estimated Cost:</label>
+                    <div class="fl BoxIndentedStyle txtBookingExpectedCost" style="margin-left: 8px;
+                        color: rgb(249, 150, 0);width:100px;">
+                    </div>
+                </div>
+                 <div class="clear"></div>
+            </div>
+			</div>
+            <div class="clear"></div>
+            <div class="DivFeedbackStuff">
+               
+                <div class="DivBookingNonShow hide" style="margin: 5px 0px 0px 135px;">
+                    <label class="fl" style="margin: 5px 10px !important; padding: 0px !important;">
+                        Driver Rating:</label>
+                    <div class="rating-f rating-enable fl margintop5" style="margin-right: 10px;">
+                        <select id="SeleNoShowRating" name="SeleNoShowRating">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>
+                    </div>
+                    <input type="text" id="txtBookingNonShowDriverNote" name="txtBookingNonShowDriverNote"
+                        class="div_Booking_lblfromAddress_txtbox fl" placeholder="Driver Notes" />
+                    <input type="button" id="btnSaveBookingNonShow" name="btnSaveBookingNonShow" class="btnyellow fr marginleft"
+                        value="Save" style="margin-right: 55px;" />
+                </div>
+                <div class="DivBookingFeedBack hide fl" style="margin-left: 10px;">
+                    <form id="frmBookingFeedBackCompleted" name="frmBookingFeedBackCompleted">
+                    <div class="div-form-element-control DivBookingFeedBack hide" style="margin-left: 18px;">
+                        <label class="fl" style="margin: 0px !important; padding: 0px !important; padding-top: 8px !important;">
+                            Cost:</label>
+                        <input type="text" id="txtBookingPassengerCost" name="txtBookingPassengerCost" class="fl txtPassengerCost"
+                            style="width: 68px; margin-left: 10px; margin-top: 4px;" placeholder="Actual cost" />
+                        <label for="txtBookingPassengerCost" generated="true" class="error">
+                        </label>
+                    </div>
+                    <div class="fl">
+                        <input type="hidden" id="hiddenBusinessBookingActualCost" name="hiddenBusinessBookingActualCost" />
+                        <input type="hidden" id="hiddenBusinessBookingEstimatedCost" name="hiddenBusinessBookingEstimatedCost" />
+						<rating value="rate" max="max" readonly="isReadonly" ng-model="rate"  id="DriverRating" name="DriverRating"  on-hover="hoveringOver(value)" on-leave="overStar = null"></rating>
+    <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}" ng-show="overStar && !isReadonly">{{percent}}%</span>
+                    </div>
+					<div class="clear"></div>
+                    <label class="fl" style="margin: 10px 0px !important; padding: 0px !important;">
+                        Feedback:</label>
+                    <input type="text" id="txtBookingDriverNote" name="txtBookingDriverNote" class="div_Booking_lblfromAddress_txtbox fl"
+                        placeholder="Feedback" style="margin-top: 4px; width: 200px !important;" />
+						<div class="clear"></div>
+                    <input type="button" id="btnSaveBookingFeedBackDetails" name="btnSaveBookingFeedBackDetails"
+                        class="btnyellow fr marginleft" value="Save" ng-click="SavePassengerFeedbackData()" style="margin: 4px 5px 0px 3px;" />
+                    </form>
+                </div>
+                <div class="clear">
+                </div>
+                <div class="DivBookingFeedbackReadonlyData hide" style="margin: 5px 0px 0px 117px;">
+                    <div class="fl" style="margin-top: 3px;">
+                        <label class="fl" style="margin: 0px !important; padding: 0px !important; padding-top: 8px !important;">
+                            Cost:</label>
+                        <div class="fl BoxIndentedStyle divBookingFeedbackReadonlyCost textcenter" style="margin-left: 10px;
+                            min-width: 80px; color: rgb(249, 150, 0);">
+                        </div>
+                    </div>
+                    <div class="fl" style="margin-left: 10px;">
+                        <label class="fl" style="margin: 0px !important; padding: 0px !important; padding-top: 8px !important;">
+                            Rating:</label>
+                        <div class="fl BoxIndentedStyle divBookingFeedbackReadonlyRating" style="margin-left: 5px;
+                            margin-right: 10px; min-width: 125px;">
+                            <div class="rating-f rating-enable fl">
+                                <select id="SeleBookingHistoryRating" name="SeleBookingHistoryRating">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5" selected="selected">5</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fl" style="margin-left: 10px;">
+                        <label class="fl" style="margin: 8px 10px 10px 2px !important; padding: 0px;">
+                            Feedback:</label>
+                        <div class="fl BoxIndentedStyle divBookingFeedbackReadonlyFeedback" style="color: rgb(249, 150, 0);
+                            min-width: 270px;">
+                        </div>
+                    </div>
+                </div>
+                  <div class="clear"></div>
+            </div>
+            <div class="clear">
+            </div>
+        </div>
+	<div class="DivQuoteList hide">
+	<div class="clear fr">
+		<a ng-click="BackToBookingDescriptionPage()" class="linkCancel">Back</a>
+	  </div>
+	  <div class="clear"></div>
+	  <ion-item ng-repeat="quote in QuoteData">
+	
+		<a  ng-click="onQuoteBookingEdit({{quote.BusinessId}},{{quote.BookingId}},{{quote.PersonId}},{{quote.DriverId}})">
+		<div>
+		<div class="fl">
+			<div class="imgRounded fl" style="display: block;width: 40px;background: url('img/New_bits/PhotoBackground.png');height: 35px;text-align: center;background-size: 40px;">
+				<img style="width:30px;height:30px;" ng-src="{{quote.BookingImage}}" />
+			</div>
+		</div>
+		<div class="fl" style="margin-left:8px;">
+			<div class="txtBookingHistoryFromToDate">{{ quote.EntityTitle }}</div>
+			<div class="clear"></div>
+			<div class="DivBusinessTitle">{{ quote.EstimatedCost }}</div>
+			<div class="clear"></div>
+			<div>{{ quote.Distance }}</div>
+			<div class="clear"></div>
+			<div class='MainBigStar' style='margin:0px auto;border-bottom:1px solid orange;'>	
+				<div class='Bigstar{{ quote.Rating }}' ></div>
+             </div>
+			<div class="clear"></div>
+			<div>{{ quote.LastLocated }}</div>
+		</div>
+		</div>
+		</a>
+		 <ion-option-button class="button-assertive" ng-click="onBookingEdit(quote)">
+			<i class="icon ion-wrench">Edit</i>
+		</ion-option-button>
+	
+	  </ion-item>
+	  
+	</ion-list>
+	</div>
+  </div> 
+  </ion-content>
+  <div class="DivFriendNoDataFound hide" style="margin-top:45px;">
+	<h2>First logged then you will able seen your friend list...</h2> 
+  </div>
+   <div class="bar bar-footer row tab-buttons-bar">
+	<div class="tabs tabs-icon-top " >
+	  <a class="tab-item" href="#/app/map" style="color:#FF9600;font-size:15px;">
+		<i class="icon ion-home"></i>
+		Map
+	  </a>
+	  <a class="tab-item" href="#/app/cabnow" style="color:#FF9600;font-size:15px;">
+		<i class="icon ion-star"></i>
+		Cab Now
+	  </a>
+	</div>
+  </div>
+</ion-view>

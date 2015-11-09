@@ -1,0 +1,146 @@
+<div class="Personmodal">
+<ion-modal-view class="PinPopupE4Modal" style="width: 84%; height: auto; top: 5%; left: 10%; right: 10%; bottom: 5%;">
+  <!--<ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closePinPopUpE1()">Close</button>
+    </div>
+  </ion-header-bar>-->
+  <ion-content>
+  
+  <input type="button"  style="display:none;" value="1234" />
+  <div class="divE8Data">
+         <!-- Booking Status 8 PopUp Template Start -->
+    <div class="TMPLT_BusinessBooking_8">
+        <div class="TMPLT_DivBusinessPopUpBooking_8_Title DivPopUpTitle" style="width: 265px;">
+            <input type="hidden" class="hiddenBusinessTrackingBusinessId" value="{BUSINESSBOOKING_8_BUSINESSID}" />
+            <input type="hidden" class="hiddenBusinessTrackingDriverId" value="{BUSINESSBOOKING_8_DRIVERID}" />
+            <input type="hidden" class="hiddenBusinessTrackingPersonId" value="{BUSINESSBOOKING_8_PERSONID}" />
+            <input type="hidden" class="hiddenBusinessTrackingBookingId" value="{BUSINESSBOOKING_8_BOOKINGID}" />
+            <div class='DivVerticalMiddle'>
+                <div style='margin: 2px 0px 0px 5px; float: left; width: 23px; height: 23px; background-color: #EF9300;
+                    border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border: 2px solid #FFF8D1;
+                    text-align: center; box-shadow: 1px 2px 2px #808080; -webkit-box-shadow: 1px 2px 2px #808080;
+                    -moz-box-shadow: 1px 2px 2px #808080;'>
+                    <a href='javascript:void(0);' onclick='javascript:ShowStreetView({LAT},{LNG});'>
+                        <img src='{BUSINESSBOOKING_8_CABIMG}' alt="{BUSINESSBOOKINGTITLE}" style='width: 23px; vertical-align: middle;' />
+                    </a>
+                </div>
+                <div class='DivInfoBoxTitleContentWidth'>
+                    <h5 class='DivInfoBoxTitleContentText'>
+                        {BUSINESSBOOKINGTITLE}</h5>
+                    <div>
+                        <div class='MainStar fl' style='margin-left: 23px;'>
+                            <div class='smallstar{BUSINESSBOOKING_8_RATING} fl'>
+                            </div>
+                        </div>
+                        &nbsp;&nbsp;{BUSINESSBOOKING_8_COMMENTCOUNT} Reviews
+                    </div>
+                </div>
+                <div class='DivInfoBoxRightContentWidth'>
+                    <a href='javascript:void(0);' value='linkValue' class='linkDispalyPopFullContent'
+                        to='down'>
+                        <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth PopupArrowImageRight hide'  onclick="javascript:showPopUpDesc(this)" src="https://www.safecab.com/DATA/images/Map_pins/arrow_right.png"/>
+                        <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth PopupArrowImageDown' onclick="javascript:hidePopUpDesc(this)" src="https://www.safecab.com/DATA/images/Map_pins/arrow_down.png" />
+                    </a>
+                </div>
+            </div>
+            <div class='DivBookingStatus_8 BusinessInfowindow margintop5' style="width: 250px;">
+                <div class='DivParentPopUpDescription DivInlineBlock_100_Percent_width'>
+                
+                    <div>
+                        <div class='fl imgRounded'>
+                            <img src='{BUSINESSBOOKING_Inner_8_CABIMG}' class='PinPopUpDescriptionWindowImage Booking_Status_8_Booking_PersonImage' title="{Booking_Status_8_Booking_Alt_Text}"/></div>
+                        <div class='DivInfoBoxDescriptionWindowLeftSideContent textcenter'>
+                            <div class='h2InfoBoxDescriptionWindowLandPhone textcenter' style="float: none;">
+                                <h2 class='h2PinPopup'>
+                                    <img src='{BUSINESSBOOKING_8_COUNTRYIMG}' class='PhoneCountryFlagIcon {BUSINESSBOOKING_8_COUNTRYIMGSHOW}' />
+                                    {BUSINESSBOOKING_8_TELEPHONE}</h2>
+                                <a href='javascript:void(0);' onclick='javascript:Show_Booking_8_BusinessCommetns({BUSINESSBOOKING_8_BUSINESSID},this,{BUSINESSBOOKING_8_DRIVERID},{BUSINESSBOOKING_8_BOOKINGID},{BUSINESSBOOKING_8_PERSONID})'>
+                                    <div class='DivInfoBoxDescriptionWindowRating'>
+                                        <div class='MainBigStar' style='border-bottom: 1px solid orange; margin: 0px auto;'>
+                                            <div class='Bigstar{BUSINESSBOOKING_8_RATING}'>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='clear'>
+                    </div>
+                    <div class='DivBookingPopUPText BoxIndentedStyle margintop5 textcenter' style="width: 165px;">
+                        {BUSINESSBOOKING_8_BUSINESSREQUIREDDATETIME}</div>
+                    <div class='fl' style="margin: 6px 2px 0px 8px;">
+                        <img src='{BUSINESSBOOKING_8_BUSINESSREDISABLEDACCESSIMG}' /></div>
+                    <div class='fl' style="margin: 6px 2px 0px 2px;">
+                        <img src='{BUSINESSBOOKING_8_BUSINESSREFEMALEDRIVERIMG}' /></div>
+                    <div class='clear'>
+                    </div>
+                    <div>
+                        <div class="clear">
+                        </div>
+                        <div class="DivBookingPopUPlbl">
+                            <label style="margin: 0px !important; padding: 0px !important;" class="fl">
+                                From:
+                            </label>
+                        </div>
+                        <div class='DivBookingPopUPText BoxIndentedStyle PinDetailsTextEllipsis DivBookingStatus8FromAddress' title="{DivBookingStatus_8_From_Address}">
+                            {BUSINESSBOOKING_8_BUSINESSFROMADDRESS}</div>
+                        <div class="clear">
+                        </div>
+                        <div class="DivBookingPopUPlbl">
+                            <label style="margin: 0px !important; padding: 0px !important;" class="fl">
+                                To:
+                            </label>
+                        </div>
+                        <div class='DivBookingPopUPText BoxIndentedStyle PinDetailsTextEllipsis DivBookingStatus8ToAddress' title="{DivBookingStatus_8_To_Address}">
+                            {BUSINESSBOOKING_8_BUSINESSTOADDRESS}</div>
+                        <!-- -->
+                             <div>
+                            <div class="fl DivBookingPopUPlbl"> <label style="margin: 0px !important; padding: 0px !important;margin-left: 15px;padding-top: 5px;" class="fl">
+                                Type:</label></div>
+                            <div class="fl"><img src="{BUSINESSBOOKING_8_BOOKING_STATUS_VEHICLETYPE}" class="{BUSINESSBOOKING_8_BOOKING_STATUS_VEHICLETYPE_CSS} fl"
+                            style="height: 20px;padding-top: 5px;" /></div>
+                            <div class="fl DivBookingPopUPlbl" style="padding-left:5px;width: 17%;padding-top: 5px;"> <label style="margin: 0px !important; padding: 0px !important;" class="fl">
+                                Cost:</label></div>
+                            <div class="fl BoxIndentedStyle" style="width:80px;">{BUSINESSBOOKING_8_BOOKING_STATUS_BUSINESSESTIMATEDCOST}</div>
+                        </div>
+                        <!-- -->
+                        <div class="clear">
+                        </div>
+                        <div class="DivBookingPopUPlbl">
+                            <label style="margin: 0px !important; padding: 0px !important;" class="fl">
+                                Note:</label></div>
+                        <div class='DivBookingPopUPText BoxIndentedStyle PinDetailsTextEllipsis DivBookingStatus8Notes' title="{DivBookingStatus_8_Notes_Address}">
+                            {BUSINESSBOOKING_8_BUSINESSNOTES}</div>
+                        <div class="clear"></div>
+                        
+                    </div>
+                </div>
+                <div class='DivBusiness_Booking_Status_8_Comments'>
+					<div class='DivUserComments hide' style='width:100%;'>
+                                        <div class='fl imgRounded'>
+                                            <img src='{BUSINESSBOOKING_Inner_8_CABIMG}' class='PinPopUpDescriptionWindowImage' />
+                                        </div>
+                                <div class='DivBookingContentLandPhone textcenter' style='width:135px;margin-top:3px;'>
+                                <h2 class='h2PinPopup'>Comments</h2>
+                                    <div class='h2InfoBoxDescriptionWindowLandPhone'><div><h2 class='h2PinPopup textcenter' style="font-size: 16px !important;"><img src="{BUSINESSBOOKING_8_COUNTRYIMG}" class='PhoneCountryFlagIcon {BUSINESSBOOKING_8_COUNTRYIMGSHOW}'/>{BUSINESSBOOKING_8_TELEPHONE}</div></h2><div class='clear'></div><div class='DivInfoBoxDescriptionWindowRating' style='padding-left:20px !important;'>
+                                        <div class='star{BUSINESSBOOKING_8_RATING}' style='border-bottom:0px;margin:2px auto;'></div>
+                                        </div>
+                                        </div></div>
+                                        <div class='clear'></div>
+                                        <div class='DivUserCommentsInner CustomScroll DivReviewInsidePopUp BoxIndentedStyle margintop5'></div>
+							</div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Booking Status 8 PopUp End -->
+    
+	</div>
+</div>
+
+  </ion-content>
+</ion-modal-view>
+</div>

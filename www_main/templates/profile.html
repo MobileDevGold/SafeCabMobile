@@ -1,0 +1,62 @@
+<ion-view view-title="Profile">
+
+    <ion-nav-buttons side="left">
+		<button class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="CheckUserIsOnline()"></button>
+	 </ion-nav-buttons>
+	 <ion-nav-title>
+      <h3 style="color:#FF9600;margin-top:10px;">Profile</h3>
+  </ion-nav-title>
+
+ <ion-content has-header="true" has-footer="true" padding="true">
+ <form ng-submit="SaveProfileData()" ng-controller="PassengerProfileDataController" class="DivPassengerForm" style="margin-bottom:55px;display:none;">
+					<div style="margin:0 auto;background: url('img/New_bits/PhotoBackground.png');height: 95px;background-size: 105px;width: 105px;padding:10px 19px;" >
+				<img src="{{profileInfo.personImage}}"  ng-model="profileInfo.personImage" style="width:70px; height:65px;padding:4px 7px;" />
+			</div>
+      <label class="item item-input">
+		<span class="input-label">Name:</span>
+		<input type="text" ng-model="profileInfo.name" value="{{profileInfo.name}}" id="txtPassengerFullName" placeholder="Please Input Name" style="padding-left: 10px;" />
+	  </label>
+	  <label class="item item-input">
+		  <span class="input-label">Mobile:</span>
+		  <input type="tel" ng-model="profileInfo.phone" value="{{profileInfo.phone}}" id="txtPassengerMobile" placeholder="Please Input Telephone" style="padding-left: 10px;" />
+	</label>
+	<label class="item item-input">
+		  <span class="input-label">Email:</span>
+		  <input type="tel" ng-model="profileInfo.email" value="{{profileInfo.email}}" id="txtPassengerEmail" placeholder="email address" style="padding-left: 10px;" />
+	</label>
+	   <label class="item item-input">
+		  <span class="input-label">Date of Birth</span>
+		  <input type="text" ng-model="profileInfo.DOB" value="{{profileInfo.DOB}}" placeholder="Please Input Telephone" style="padding-left: 10px;" />
+		</label>
+		<label class="item item-input">
+		  <span class="input-label">Passcode</span>
+		  <input type="text" ng-model="profileInfo.passcode" maxlength="4" id="txtPassengerPasscode" value="{{profileInfo.passcode}}" placeholder="Please Input Telephone" style="padding-left: 10px;" />
+		</label>
+		<label class="item item-input">
+		  <span class="input-label">Registered</span>
+		  <label ng-model="profileInfo.dateset"> {{profileInfo.dateset}} </label>
+		</label>
+		<div style="margin-top:5px;"></div>
+		<button class="button button-block button-positive" type="submit">Save</button>
+		</form>
+		
+	</ion-content>
+	<div class="DivPersonNoDataFound" style="margin-top:45px;">
+	<h2>First logged....</h2> 
+  </div>
+	<div class="bar bar-footer row tab-buttons-bar">
+	
+		<div class="tabs tabs-icon-top " >
+		  <a class="tab-item" href="#/app/map" style="color:#FF9600;font-size:15px;">
+			<i class="icon ion-home"></i>
+			Map
+		  </a>
+		  <a class="tab-item" href="#/app/cabnow" style="color:#FF9600;font-size:15px;">
+			<i class="icon ion-star"></i>
+			Cab Now
+		  </a>
+		</div>
+    </div>
+	
+</ion-view>
+

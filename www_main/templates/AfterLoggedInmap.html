@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<ion-view  ng-init="init1()">
+ <ion-nav-buttons side="left">
+	<button class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="CheckUserIsOnline()">
+    </button>
+ </ion-nav-buttons>
+  <ion-nav-title>
+        <h3 style="color:#FF9600;margin-top:10px;">Safe Cab</h3>
+  </ion-nav-title>
+  <ion-nav-buttons side="right">
+     <a class="button button-icon icon ion-compose" ng-click="openPopup()">
+	 </a>
+  </ion-nav-buttons>
+  <ion-content>
+  <input type="button"  style="display:none;" value="test" />
+  
+		<div class="divMapChat">
+			<div style="width: 80%;float:left;margin-top: 5px;">
+				<input type="text" class="txtsearchbox" id="txtSearchaddress" name="txtSearchaddress" g-places-autocomplete ng-model="address" placeholder="Enter a location" >
+			</div>
+			<div style="width:19%;float:left;">
+				<button type="button" id="btnmove" name="btnmove" value="Go To" class="btn-1 btnGoto" style="cursor: pointer;" ng-click="goTo()">
+					Go To</button>
+			</div>
+		</div>
+		<div id="BusinessRegistrationPagepanel">
+                <a class="btnStreetViewClose" onclick="HideStreetView();">
+                    <img src="https://www.safecab.com/DATA/images/Close.png" alt="Close" /></a>
+            </div>
+      <div id="map"></div>
+  </ion-content>
+  <div class="bar bar-footer row tab-buttons-bar">
+        <div class="tabs tabs-icon-top">
+		  <a class="tab-item" href="#/app/map" style="color:#FF9600;font-size:15px;">
+			<i class="icon ion-home"></i>
+			Map
+		  </a>
+		  <a class="tab-item" href="#/app/cabnow" style="color:#FF9600;font-size:15px;">
+			<i class="icon ion-star"></i>
+			Cab Now
+		  </a>
+		</div>
+  </div>
+</ion-view>
+
+

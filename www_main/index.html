@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+	<link href="css/mobiscroll.custom-2.15.0.min.css" rel="stylesheet">
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+	<link href="lib/ionic-rating/ionic-rating.css" rel="stylesheet">
+	
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+	<link rel="stylesheet" href="lib/angular-google-places-autocomplete/src/autocomplete.css">
+
+	<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+	 
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+	<script src="lib/mobiscroll.custom-2.15.0.min.js"></script>
+	<script src="lib/angular/angular-validator.min.js"></script>
+	<script src="lib/ionic-rating/ionic-rating.js"></script>
+	<link rel="stylesheet" href="lib/angular-google-places-autocomplete/src/autocomplete.css">
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+	
+	<!--<script src="lib/ng-map.min.js"></script>-->
+    <!-- your app's js -->
+
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/jquery-migrate-1.2.1.min.js"></script>
+	<script src="js/jquery-ui.min.js"></script>
+	<script src="js/jquery.formatDateTime.js"></script>
+	
+     <script src="js/app.js"></script>
+	<script src="js/config.js"></script>
+	<script src="js/DBMaster_InputPara.js"></script>
+	
+	<script src="js/index.js"></script>
+    <script src="js/controllers.js"></script>
+	
+	<script src="js/PointOfInterest.js"></script>
+	<script src="js/Booking.js"></script>
+	<script src="js/SOS.js"></script>
+	
+	
+	<!--<script src="js/directives/map_controller.js"></script>
+	<script src="js/directives/map.js"></script>
+	<script src="js/directives/marker.js"></script>
+	<script src="js/directives/shape.js"></script>
+	<script src="js/directives/info-window.js"></script>-->
+	<script src="js/services.js"></script>
+	<script src="js/sortable.js"></script>	
+	
+  </head>
+
+  <body ng-app="safecab" class="platform-android platform-cordova platform-webview">
+<!--<body class="platform-android platform-cordova platform-webview">-->
+    <ion-nav-view></ion-nav-view>	
+	<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places&key=AIzaSyAU-EgF0l5o8DXx2YuPWb_hrKGBttnQx1c&sensor=true"></script>
+	<script src="js/infobox.js"></script>
+	<script src="lib/angular-google-places-autocomplete/src/autocomplete.js"></script>
+	<div class="TestData123"></div>
+	<!-- Entity Type 1 Data Start -->
+		<div class="divUserData">
+       <div class='DivPopTitle DivPopUpTitle fl' style='width:265px !important;margin-top:20px;'><input type='hidden' value='B' class='txtHiddenUserType' />
+                                <div class='DivVerticalMiddle'>
+                                        <div class='cabBackground'><a href="javascript:void(0);" onclick="javascript:ShowStreetView({LAT},{LNG});"><img src="{CABIMAGE}" style='width: 23px; vertical-align: middle;height:19px;'/></a></div>
+                                           <div class='DivInfoBoxTitleContentWidth' >
+                                                <h5 class='DivInfoBoxTitleContentText'>{ENTITYTITLE}</h5>
+                                                <div><div class='MainStar fl' style='margin-left:23px;'><div class='smallstar" + objBusiness.Rating + " fl'></div></div>&nbsp;&nbsp; {CABREVIEWS} Reviews
+                                           </div></div>
+                                           <div class='DivInfoBoxRightContentWidth' >
+                                            <a href='javascript:void(0);'  value='linkValue' class='linkDispalyPopFullContent'>
+                                                <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth PopupArrowImageRight ' onclick='javascript:showPopUpDesc(this)' src='img/Map_pins/arrow_right.png'/>
+                                                <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth PopupArrowImageDown hide'  onclick='javascript:hidePopUpDesc(this)' src='img/Map_pins/arrow_down.png'/>
+                                              </a>
+                                           </div>
+								</div>
+										   <div class='BusinessInfowindow' style='width:250px;display:none;'>
+                                <div class='DivParentPopUpDescription' style='width:100%;' >
+                                <div>
+                                    <div class='fl imgRounded' style='margin-top:-5px;'>
+                                        <img src='{CABIMAGE}' class='PinPopUpDescriptionWindowImage'/>
+                                     </div>
+                                     <div class='DivInfoBoxDescriptionWindowLeftSideContent'>
+                                        <div class='h2InfoBoxDescriptionWindowLandPhone textcenter' style='float:none;'>
+										<h2 class="h2PinPopup"><img src="{CABTELEPHONECOUTRYCODEIMAGE}" class="PhoneCountryFlagIcon">{CABTELEPHONE}</h2>
+										<a href='javascript:void(0);' onclick='{COMMENTDATA}'>
+                                            <div class='DivInfoBoxDescriptionWindowRating'>
+                                                <div class='MainBigStar' style='margin:0px auto;border-bottom:1px solid orange;'>
+                                                    <div class='Bigstar{RAINGSTAR}' ></div>
+                                                   </div>
+                                             </div>
+                                          </a><div>{BTNFAVOURITES}</div>
+                                        </div>
+                                        </div>
+                                 </div>
+
+                                    <div class='clear'></div>
+                                    <div>
+                                    <p class='PElementInfoBoxDescriptionWindow BoxIndentedStyle'>{ENTITYADDRESS}</p>
+                                    <div class='clear'></div><div class='textcenter'style="margin-top:8px;" >{BTNBOOKING}&nbsp;&nbsp; {BTNCONTACTUS} </div>
+                                    <div class='clear'></div><div class='textcenter DivInfoBoxDescriptionWindowTime'><span>Available: {STARTTIME} - {ENDTIME}</span></div>
+                                    <div class='textcenter' style='width:224px;margin:0px auto;'>{BUSINESSCABTYPES}</div>
+                                    </div></div>
+                                    <div class='DivBusinessComments'>
+										<div class='DivUserComments hide'>
+                                       <div>
+                                        <div class='fl imgRounded'>
+                                            <img src='{CABIMAGE}' class='PinPopUpDescriptionWindowImage'/>
+                                        </div>
+                                        <div class='DivInfoBoxDescriptionWindowLeftSideContent'>
+                                <div class='DivBookingContentLandPhone textcenter' style='float:none;'>
+                                <h2 class='h2PinPopup'>Comments</h2>
+                                    <div class='h2InfoBoxDescriptionWindowLandPhone' style='float:none;'><div><h2 class='h2PinPopup textcenter'><img src="{CABTELEPHONECOUTRYCODEIMAGE}" class='PhoneCountryFlagIcon'/>{CABTELEPHONE}</div></h2><div class='DivInfoBoxDescriptionWindowRating' style='padding-left:20px !important;'>
+                                        <div class='MainBigStar' style='margin:0px auto;display:inline-block;'>
+                                                  <div class='Bigstar{RAINGSTAR}' ></div>
+                                           </div>
+                                        </div>
+                                        </div></div></div></div>
+                                        <div class='clear'></div>
+                                        <div class='DivUserCommentsInner CustomScroll DivReviewInsidePopUp BoxIndentedStyle'>
+										</div><div class='clear'></div><div class='clear'></div>
+										<div class="clear"></div>
+											<a href='javascript:void(0);' onclick='javascript:CloseCommentsWindow($(this));' class='linkCancelPopup' style='float:right !important;'>Cancel</a><div class='clear'></div>
+											</div>
+									</div>
+                                    <div class='DivBooking'>
+										<div class='DivBookingPopUp hide'>
+                        <select class='selePersonPOI hide'></select>
+						<div class='DivBookingPopUpInner clear'>
+                                <div class='textcenter' style='width:100%;margin-bottom:3px;'>
+                                    <h2 class='h2PinPopup'>Pick Up</h2>
+                                </div>
+                                 <input type='hidden' class='hiddenCarType' value='{tempUserVehicleTypeId}'/>
+                                <div class='clear'></div>
+                                <div>
+                                    <div><label class='lblBusinessPopUpSmallTitles' >From:</label></div>
+                                    <div style='margin-left:65px;' class='BoxIndentedStyle' style="width:100px;">
+										<label class='btnPersonFromLocation padding5' style='margin:0px !important;padding:0px !important;margin:3px !important;'/>{PickUpScreenCurrentAddress}</label>
+								   </div>
+                                 </div>
+                                     <input type='hidden' class='hiddenFromAddressLat'/>
+                                     <input type='hidden' class='hiddenFromAddressLng'/>
+                                     <div class='clear DivBookingPopUpMarginBottom'></div>
+                                    <label class='lblBusinessPopUpSmallTitles' >When:</label>
+                                    <input type='button' onClick='functionShowCabDateTimePopUp()' class='btnyellow btnCabDatePopUP divBookingPopUptxtboxMarginleft'  value='{tempDateTime}'/>
+                                    <div class='clear DivBookingPopUpMarginBottom'></div>
+                                    <label class='lblBusinessPopUpSmallTitles' >For:</label>
+                                    <input type='button' onClick='functionBusinessShowCarTypePopUp()' class='btnyellow btnBusinessCarType divBookingPopUptxtboxMarginleft'  value='{tempVehicleTypeLabel}'  style='width:163px;'/>
+                                    <div class='clear DivBookingPopUpMarginBottom'></div>
+                                     <label class='lblBusinessPopUpSmallTitles' >To:</label>
+                                     <input type='button' onClick='javascript:ShowPOIList(this)' class='btnyellow btnPersonToLocation divBookingPopUptxtboxMarginleft'  value='Will tell driver'  style='width:163px;'/>
+                                     <input type='hidden' class='hiddenToAddressLat'/>
+                                     <input type='hidden' class='hiddenToAddressLng'/>
+                                     <div class='clear DivBookingPopUpMarginBottom'></div>
+                                     <label class='lblBusinessPopUpSmallTitles'>Notes:</label>
+                                    <input type='text'  class='txtNotes fl divBookingPopUptxtboxMarginleft' style='width:170px;border-color:#894d05;'/>
+                                    <div class='clear DivBookingPopUpMarginBottom'></div>
+                                    <a href='javascript:void(0);' onClick='javascript:CloseBookingWindow($(this));' class='linkCancelPopup' style='float:right !important;'>Cancel</a>
+                                    <div class='fr'><a class='btnBookNow' onClick='SaveCabInstantBookNow()'><input type='button' class='btnyellow btnRequest' value='Request Now' /></a></div>
+                            </div>
+                            <div class='clear'></div>
+                    </div>
+									</div>
+                                    <div class='DivContactUs'>
+										<div class='DivContact hide'>
+                            <div class='DivContactInner clear' >
+                            <div>
+                            <div class='fl imgRounded'>
+                                <img src='{CABIMAGE}' class='PinPopUpDescriptionWindowImage'/>
+                            </div>
+                            <div class='fl DivInfoBoxDescriptionWindowLeftSideContent textcenter' style='float:none;'>
+                                <h2 class='h2PinPopup'>Contact Us</h2>
+                                    <div>
+                                        <h2 class='h2PinPopup'><img src="{CABTELEPHONECOUTRYCODEIMAGE}" class='PhoneCountryFlagIcon'/>{CABTELEPHONE}</h2>
+                                         <div class='MainBigStar' style='margin:0px auto;display:inline-block;'>
+                                           <div class='Bigstar{RAINGSTAR}' ></div>
+                                           </div>
+										   <div class='clear'></div></div></div>
+                             </div>
+                             <div class='clear'></div>
+                             <form id='frmContactUsChatReply' name='frmContactUsChatReply'>
+                             <div class='fl' style='width:100%;'><hr  style='margin:4px !important;'/>
+                                <div class='fl' style='border-color:#894d05;'><img src='{CABIMAGE}'  class='DivContactUsPageUserImg'/></div>
+                                <textarea rows='3' class='borderRadius fr marginleft5 textareaChattext' ng-model="test.TextareContactUsMessage" style='border-color:#894d05;width: 200px;' placeholder='Write you message here...'></textarea>
+                             </div>
+                             <div class='fr' style='margin-top:2px !important;'>
+                                 <a href='javascript:void(0);' onClick='javascript:SendChatMessage({BUSINESSID},{DRIVERID})' class='fl ImgBusinessContactUsMessage'>
+                                <a href='javascript:void(0);' onclick='javascript:CloseContactWindow($(this));' class='linkCancelPopup'>Cancel</a>
+                             </div>
+                             </form>
+                             <div class='clear'></div>
+                    </div><div class='clear'></div></div>
+									</div>
+                        </div>
+    </div>
+	</div>
+	<!-- Entity Type 1 Data End -->
+	<!-- Place template html file start -->
+		<div id="DivPopUpTitlePOIContainer" class="hide">
+    <div class="DivPOITemplatePopUpTitle fl" id="TMPLT_PopUpAddPlace">
+        <div class="DivPopUpTitlePOI" style="cursor: default; width: 256px;">
+            <div class='DivVerticalMiddle'>
+                <div class='cabBackground'>
+                    <a href='javascript:void(0);' onclick='javascript:ShowStreetView({LAT},{LNG});'>
+                        <img src="https://www.safecab.com/DATA/images/cab-icon.png" class='DivInfoBoxTitleLeftImgWidth' />
+                    </a>
+                </div>
+                <div class='DivInfoBoxTitleContentWidth' style='width: 150px;'>
+                    <h4 class='textcenter margin0'>
+                        {PLACETITLE}</h4>
+                </div>
+                <div class='DivInfoBoxRightContentWidth'>
+                    <a href='javascript:void(0);' value='linkValue' class='linkDispalyPopFullContent'
+                        to='down'>
+                        <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth  PopupArrowImageDown'
+                            onclick="javascript:hidePopUpDesc(this)" src="https://www.safecab.com/DATA/images/Map_pins/arrow_down.png" />
+                        <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth PopupArrowImageRight hide'
+                            onclick="javascript:showPopUpDesc(this)" src="https://www.safecab.com/DATA/images/Map_pins/arrow_right.png" />
+                    </a>
+                </div>
+            </div>
+            <div class='DivPOIDivDescription BusinessInfowindow margintop5' style="width: 240px;">
+                <div class="tempLiveMapPOIDivPopUpDescriptionContent">
+
+                    <div class="DivPlaceReoveScreen">
+                      <form id="frmPointOfInterest" name="frmPointOfInterest" method="post" class="fl frmPOI"
+                        style="width: 100%;">
+                        <div class="fl marginright10">
+                            <div class="fl imgRounded image-container" style="cursor: pointer;" onclick="OpenPOIFileUploadOptions(this)">
+                                <img src="https://www.safecab.com/DATA/images/UserDetails/users.png" class="PinPopUpDescriptionWindowImage  POIPic">
+                                <div class="after">
+                                    <img src="../../DATA/images/slr_camera2.png" style="margin-top: 15px;" /></div>
+                                    <label style="clear:both;padding:0px;padding-left:5px;" class="fl">(Max size 2mb)</label>
+                            </div>
+                            <input type="file" class="POItxtimageFile" style="display: none;" onchange="POIImageUploadStuff(event)" />
+                           
+                              <div class="fl margintop5" style="margin-top: 20px;">
+                            <label class='lblStartAddressPopUpSmallTitles' style="padding: 0px 0px 0 0px !important">
+                                Place:</label>
+                        </div>
+                        <input type="text" class="txtbox txtPointOfInterestName" style="width: 118px !important;"
+                            value="{PLACE}" />
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div class="fl" style="margin-top:15px;">
+                            <label class='lblStartAddressPopUpSmallTitles' style="width: 80px;">
+                                Address:</label>
+                        </div>
+                        <div class="fl" style="margin-top:15px;">
+                            <div class="lblUserCurrentAddress padding5 BoxIndentedStyle" style="width: 132px;
+                                float: left;">
+                                {TITLE}</div>
+                        </div>
+                       
+                      
+                        <div class="clear">
+                        </div>
+                        <div>
+                            <input type='button' class='btnyellow fr margin5' value='Confirm' onclick='javascript:POIConfirmUserLocation($(this))' />
+                        </div>
+                        <input type='hidden' class='hiddenPOIlat' value="{currentGeoLatitude}" />
+                        <input type='hidden' class='hiddenPOIlng' value="{currentGeoLongitude}" />
+                        <input type='hidden' class='hiddenPersonPOIId' value="{PERSONPOIID}" />
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+		<div class="DivPopUpTitlePOIContainer hide">
+    <div class="DivPOITemplatePopUpTitle fl">
+        <div class="DivPopUpTitlePOI" style="cursor: default; width: 256px;">
+            <div class='DivVerticalMiddle'>
+                <div class='cabBackground'>
+                    <a href='javascript:void(0);' onclick='javascript:ShowStreetView({LAT},{LNG});'>
+                        <img src="{PASSENGERPOISMALLIMAGE}" class='DivInfoBoxTitleLeftImgWidth' />
+                    </a>
+                </div>
+                <div class='DivInfoBoxTitleContentWidth' style='width: 175px;'>
+                    <h4 class='textcenter margin0 DivPOIGridTitle'>
+                        {PLACETITLE}</h4>
+                </div>
+                <div class='DivInfoBoxRightContentWidth'>
+                    <a href='javascript:void(0);' class='linkDispalyPopFullContent' to='down'>
+                        <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth PopupArrowImageRight'
+                            onclick="javascript:hidePopUpDesc(this)" src="https://www.safecab.com/DATA/images/Map_pins/arrow_down.png" />
+                        <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth PopupArrowImageDown hide'
+                            onclick="javascript:showPopUpDesc(this)" src="https://www.safecab.com/DATA/images/Map_pins/arrow_right.png" />
+                    </a>
+                </div>
+            </div>
+            <div class="DivPOIDivDescriptionContainer">
+                <div class='DivPOIDivDescription BusinessInfowindow margintop5 DivPOIDivDescriptionO'
+                    style="width: 250px;">
+                    <input type="hidden" class="HIDDENTEMPPOILAT" value="{HIDDENTEMPPOILAT}" />
+                    <input type="hidden" class="HIDDENTEMPPOILNG" value="{HIDDENTEMPPOILNG}" />
+                    <input type="hidden" class="HIDDENISADVERTDATAADDED" value="{HIDDENISADVERTDATAADDED}" />
+                    <input type="hidden" class="HIDDENIADVERTID" value="{HIDDENIADVERTID}" />
+                    <input type="hidden" class="HIDDENPERSONPOIID" value="{PERSONPOIID}" />
+                    
+                    <div class="tempLiveMapPOIDivPopUpDescriptionContent">
+                        <div class="DivPlaceReoveScreen" style="width: 250px;">
+                            <div class="clear">
+                            </div>
+                            <div class="fl marginright10">
+                                <div class="fl imgRounded image-container" style="cursor: pointer;" onclick="OpenEditPOIFileUploadOptions(this)">
+                                    <img src="{PASSENGERPOIIMAGE}" class="PinPopUpDescriptionWindowImage  POIPic">
+                                    <div class="after">
+                                        <img src="../../DATA/images/slr_camera2.png" style="margin-top: 15px;" /></div>
+                                    <label style="clear:both;padding:0px;padding-left:5px;" class="fl">(Max size 2mb)</label>
+									<div class="clear"></div>
+                                </div>
+                                <input type="file" class="POIEdittxtimageFile" style="display: none;" onchange="POIEditImageUploadStuff(event)" />
+                            </div>
+							
+                            <div class="DivEditPlaceData hide fl" >
+                                <div class="textcenter">
+                                    <h4 class='textcenter margin0 DivPOI_Title' style="width: 100px;">
+                                        {PLACETITLE}</h4>
+                                    <div class="clear">
+                                    </div>
+                                    <input type='button' class='btnyellow marginbottom5' value='Remove Place' onclick='javascript:RemovePersonPointOfInterest({PERSONPOIID},{PERSONID},{TIMEOUT},"{PLACETITLE}","FromGridView")'
+                                        style="font-size: 12px; margin-top: 21px;" />
+                                </div>
+                            </div>
+                            <div class="clear">
+                            </div>
+                            <div class="fl" style="margin-top:15px;">
+                                <label class='lblStartAddressPopUpSmallTitles' style="width: 80px;">
+                                    Address:</label>
+                            </div>
+                            <div class="fl" style="margin-top:15px;">
+                                <div class="lblUserCurrentAddress fl padding5 BoxIndentedStyle" style="width: 132px;">
+                                    {ADVERTADDRESS}</div>
+                            </div>
+                            <div class="clear">
+                            </div>
+
+                            <div class="textcenter marginbottom5">
+                                <input type='button' class='btnyellow btnAdvertTxt' value='{ADVERTBUTTONTEXT}' onclick='javascript:ShowAdvertDiv($(this))'
+                                    style="font-size: 14px;" />
+                                <input type="button" class="btnyellow hide btnPlaceSetRate" id="btnSetRate" name="btnSetRate"
+                                    onclick="javascript:linkVehicleTypeClick({PERSONPOIID},'{PLACETITLE}')" value="Set Vehicle Rates" />
+                            </div>
+                            <div class="DivEditPlace textcenter" >
+                                <input type='button' class='btnyellow fl {BTNDISPLAYBOOKINGTO}' value='Book To' onclick='javascript:DisplayPlaceBooking($(this),"To")'
+                                    style="margin-left: 3px;" />
+                                <input type='button' class='btnyellow fl {BTNDISPLAYBOOKINGFROM}' value='Book From'
+                                    onclick='javascript:DisplayPlaceBooking($(this),"From")' style="margin-left: 5px;" />
+                            </div>
+                            <div class="clear">
+                            </div>
+                            <a href="javascript:void(0);" onclick="ClosePOIEditDiv(this)" class="linkCancel {DISPLAYPOIEDITDIV}">
+                                Cancel</a>
+                        </div>
+                        <div class="DivPlaceBookingScreen hide" style="height: auto; width: 100%;">
+                            <ul class='ulPersonBookingCabType hide'>
+                            </ul>
+                            <select class='selePlacePopUp hide'>
+                            </select>
+                            <select class='seleFromPlacePopUp hide'>
+                            </select>
+                            <div class="fl">
+                                <label class='lblBusinessPopUpSmallTitles'>
+                                    From:</label></div>
+                            <div style="margin-left: 65px;" class='DivPlaceFromLocation'>
+                                <label style="margin: 0px !important;" class="lblUserFromLocation padding5 BoxIndentedStyle">
+                                </label>
+                            </div>
+                            <input type='button' onclick='javascript:ShowFromPlaceList()' class='btnyellow btnUserFromLocaiton divBookingPopUptxtboxMarginleft hide fl'
+                                value="{USERPLACEFROM}" style='width: 163px;' />
+                            <input type='hidden' class='hiddenPlaceFromAddressLat' value='{TEMPADDRESSFROMLAT}' />
+                            <input type='hidden' class='hiddenPlaceFromAddressLng' value='{TEMPADDRESSFROMLNG}' />
+                            <input type='hidden' class='hiddentempPlaceFromAddressLat' value='{ADDRESSFROMLAT}' />
+                            <input type='hidden' class='hiddentempPlaceFromAddressLng' value='{ADDRESSFROMLNG}' />
+                            <input type='hidden' class='hiddenISUserChangePlaceFromAddress' value="false" />
+                            <div class='clear DivBookingPopUpMarginBottom'>
+                            </div>
+                            <label class='lblBusinessPopUpSmallTitles'>
+                                When:</label>
+                            <input type='button' onclick='PlaceDateTimePopUp()' class='btnyellow btnPlaceCabDatePopUP divBookingPopUptxtboxMarginleft'
+                                value='' style="width: 163px; color: White;" />
+                            <div class='clear DivBookingPopUpMarginBottom'>
+                            </div>
+                            <label class='lblBusinessPopUpSmallTitles'>
+                                For:</label>
+                            <input type='button' onclick='PlaceCarTypePopUp()' class='btnyellow btnPlaceCarType divBookingPopUptxtboxMarginleft'
+                                style='width: 163px;' />
+                            <input type="hidden" class="hiddenBusinessCarType" value='2' />
+                            <div class='clear DivBookingPopUpMarginBottom'>
+                            </div>
+                            <label class='lblBusinessPopUpSmallTitles'>
+                                To:</label>
+                            <input type='button' onclick='javascript:ShowPlaceList("To")' class='btnyellow btnPlaceToLocation divBookingPopUptxtboxMarginleft'
+                                value='{USERPLACETO}' style='width: 163px;' />
+                            <input type='hidden' class='hiddenPlaceToAddressLat' value='{TEMPADDRESSLAT}' />
+                            <input type='hidden' class='hiddenPlaceToAddressLng' value='{TEMPADDRESSLNG}' />
+                            <div class='clear DivBookingPopUpMarginBottom'>
+                            </div>
+                            <label class='lblBusinessPopUpSmallTitles'>
+                                Notes:</label>
+                            <input type='text' class='txtPlaceNotes fl divBookingPopUptxtboxMarginleft' style='width: 160px;' />
+                            <div class='clear DivBookingPopUpMarginBottom'>
+                            </div>
+                            <a href="javascript:void(0);" onclick="javascript:ClosePlaceBookingWindow($(this));"
+                                class="linkCancelPopup" style="float: right !important;">Cancel</a>
+                            <input type="button" class="btnyellow fr" onclick="javascript:SavePlaceInstantBookNow()"
+                                value="Book Now" />
+                        </div>
+                        <div class="DivPassengerAdvert hide" style="width: 242px;">
+                            <div class="tempLiveMapAdvertDivPopUpDescriptionContent">
+                                <div class="DivAdvertReoveScreen" style="display: inline-block;">
+                                    <h3 class="textcenter" style="margin: 0px; padding: 0px; margin-top: -10px;">
+                                        Advert</h3>
+                                    <form name="frmAdvert" id="frmAdvert" method="post" class="fl clsFrmAdvert" style="240px;">
+                                    <input type="hidden" class="HiddenAdvertLat" value="{HIDDENADVERTLAT}" />
+                                    <input type="hidden" class="HiddenAdvertLng" value="{HIDDENADVERTLNG}" />
+                                    <input type="hidden" class="HiddenAdvertPOIId" value="{HIDDENADVERTPOIID}" />
+                                    <input type="hidden" class="HiddenAdvertId" value="{HIDDENADVERTID}" />
+                                    <input type="hidden" class="HiddenAdvertRecordingName" value="{HIDDENADVERTRECORDINGNAME}" />
+                                    <input type="hidden" class="HiddenAdvertRecordingType" value="{HiddenAdvertRecordingType}" />
+                                    <div class="fl" style="margin-left: -2px;">
+                                        <div class="imgRounded fl image-container" style="cursor: pointer;" onclick="OpenAdvertFileUploadOptions(this)">
+                                            <img src="../../DATA/images/UserDetails/users.png" class="PinPopUpDescriptionWindowImage AdvertPic">
+                                            <div class="after">
+                                                <img src="../../DATA/images/slr_camera2.png" style="margin-top: 15px;" /></div>
+                                                <label style="clear:both;padding:0px;padding-left:5px;" class="fl">(Max size 2mb)</label>
+                                        </div>
+                                        <input type="file" class="AdverttxtimageFile" style="display: none;" onchange="AdvertImageUploadStuff(event)" />
+                                    </div>
+                                    <div class="fl" style="width: 141px;">
+                                        <input type="text" class="txtbox txtAdavAdvertEmail fl txtEmailLowerCase" style="width: 110px !important;"
+                                            placeholder="email address" />
+                                        <div class="clear">
+                                        </div>                                        
+                                        <input type="text" class="txtPlaceCountryCode txtTNCC fl" onclick="ShowCountryCodePopUp(this)"
+                                            style="width: 15px; cursor: pointer;" readonly />
+                                        <input type="text" class="txtbox txtAdavAdvertTelephone txtTN fl" style="width: 79px !important;
+                                            margin-left: 0px;" placeholder="123457890" />
+                                    </div>
+                                    <div class="clear">
+                                    </div>
+                                    <div class="clear">
+                                    </div>
+                                    <div class="fl" style="margin-top:15px;">
+                                        <div class="lblAdvertUserCurrentAddress  padding5 BoxIndentedStyle fl" style="width: 220px;">
+                                            {ADVERTADDRESS}</div>
+                                    </div>
+                                    <div class="fl margintop5">
+                                        <label class='lblStartAddressPopUpSmallTitles'>
+                                            Range:</label>
+                                    </div>
+                                    <input type="text" class="txtbox txtAdvertRange txtDisable" onclick="DisplayAdverRangePopUp(this)"
+                                        style="width: 65px !important;" value="Whole UK" readonly />
+                                    <select class="seleAdvertRange hide">
+                                    </select>
+                                    <div class="clear">
+                                    </div>
+                                    <div class="fl margintop5">
+                                        <label class='lblStartAddressPopUpSmallTitles'>
+                                            Views:</label>
+                                    </div>
+                                    <input type="text" class="txtbox txtAdvertViews fl" value="10" style="width: 35px !important;" />
+                                    <div class="DivAdvertViewCredits" style="color: #868686;font-size: 12px;margin: 8px -2px 0px 0px;">(10 views = 1 credit)</div>
+                                    <div class="clear">
+                                    </div>
+                                    <a href="javascript:void(0);" onclick="DisplayPlaceAdvacneDiv(this)" style="padding-left: 68px;"
+                                        class="safeCabBaseColor">Show advance</a>
+                                    <div class='textcenter fr' style="margin-top: 3px;">
+                                        <input type='button' class='btnyellow' value='Save' onclick='javascript:AdvertConfirmUserLocation($(this))' />
+                                        <input type='button' class='btnyellow hide btnRemoveAdvert' value='Remove' onclick='javascript:RemoveAdvert($(this))' />
+                                        <a href="javascript:void(0);" onclick="CloseAdvert(this)" class="linkCancel" style="float: none;">
+                                            Cancel</a>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="DivAdvancePassengerAdvert hide" style="width: 100%;">
+                            <form class="clsfrmAdvancePassengerAdvert" enctype="multipart/form-data" name="frmAdvancePassengerAdvert"
+                            method="post">
+                            <div class="fl" style="padding: 0px 5px; margin-left: 92px;">
+                                <input type="checkbox" id="chkPhoneType" class="regular-checkbox" name="chkPhoneType" />
+                                <label class="clear form-label chkboxlbl fl" for="chkPhoneType">
+                                    &nbsp;</label>
+                                <label for="chkPhoneType" style="padding-right: 0px;">
+                                    For Phone Only</label>
+                            </div>
+                            <div class="clear">
+                            </div>
+                            <div class="fl margintop5">
+                                <label class='lblStartAddressPopUpSmallTitles'>
+                                    URL:</label>
+                            </div>
+                            <input type="text" class="txtbox txtAdavAdvertURL fl" style="width: 125px !important;" />
+                            <div class="clear">
+                            </div>
+                            <div class="clear">
+                            </div>
+                            <label class="fl lblFileType" style="padding: 0px; margin: 0px; margin-left: 81px;">
+                                &nbsp;</label>
+                            <div id="example" class="k-content DivFileUploader hide">
+                                <div class="configuration" style="width: 230px">
+                                </div>
+                                <div style="width: 100%">
+                                    <div class="demo-section ContainerFileUpload">
+                                        <input id="Advert_Add_MediaFiles" name="Advert_Add_MediaFiles" type="file" />
+                                    </div>
+                                    <a class="linkCancel linkCloseFileUploader hide">Cancel</a>
+                                </div>
+                            </div>
+                            <div class="clear">
+                            </div>
+                            <div class="textcenter" style="margin-bottom: 5px;">
+                                <input type="button" class="btnyellow btnViewMediaType" value="View Advert" />
+                                <a class="linkViewAdvertMedia hide"></a>
+                                <input type="button" value="load new" class="btnyellow btnLoadNewData" style="margin-left: 10px;" />
+                            </div>
+                            <div class="clear">
+                            </div>
+                            <div class="fl margintop5">
+                                <label class='lblStartAddressPopUpSmallTitles'>
+                                    ValidFrom:</label>
+                            </div>
+                            <input type="text" class="txtbox txtAdvertValidFrom txtDisable" onclick="DisplayAdvertValidDateFrom(this)"
+                                style="width: 85px !important;" readonly />
+                            <div class="clear">
+                            </div>
+                            <div class="fl margintop5">
+                                <label class='lblStartAddressPopUpSmallTitles'>
+                                    ValidTo:</label>
+                            </div>
+                            <input type="text" class="txtbox txtAdvertValidTo txtDisable" onclick="DisplayAdvertValidDateTo(this)"
+                                style="width: 85px !important;" readonly />
+                            <div class="clear">
+                            </div>
+                            <a href="javascript:void(0);" onclick="javascript:ClosePlaceAdvanceBooking($(this));"
+                                class="linkCancelPopup" style="float: right !important;">Cancel</a>
+                            <input type="button" class="btnyellow fr" onclick="javascript:SaveAdavPlaceData(this)"
+                                value="Save" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+	<!-- Place template html file end -->
+  </body>
+  <script>
+  document.addEventListener("deviceready", onDeviceReady, false);
+
+	function loadScript() {
+	  var script = document.createElement('script');
+	  script.type = 'text/javascript';
+	  script.src = 'http://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places&key=AIzaSyAU-EgF0l5o8DXx2YuPWb_hrKGBttnQx1c&sensor=true&callback=initialize';
+	  document.body.appendChild(script);
+	  
+	  script = document.createElement('script');
+	  script.type = 'text/javascript';
+	  script.src = 'js/infobox.js';
+	  document.body.appendChild(script);
+	  
+	  detectLocation();
+	  
+	}
+
+	function detectLocation() {
+	
+		
+	}
+	
+function onDeviceReady() {
+      //alert("deviceReady");
+		   if(navigatior.splashscreen)
+       navigator.splashscreen.hide();
+	   //loadScript();
+	   //var domElement = document.getElementById("bodyId");
+	   //angular.bootstrap(domElement, ["safecab"]);
+	}
+	
+	function initialize() {
+	  var mapOptions = {
+		zoom: 8,
+		center: new google.maps.LatLng(-34.397, 150.644)
+	  };
+    
+	  var map = new google.maps.Map(document.getElementById('map-canvas'),
+		  mapOptions);
+}
+
+
+document.addEventListener("backbutton", onBackKeyDown, false);
+
+function onBackKeyDown() {
+    // Handle the back button
+}
+</script>
+</html>

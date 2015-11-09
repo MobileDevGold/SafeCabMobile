@@ -1,0 +1,84 @@
+<ion-modal-view class="loginModal" style="width: 81%; height: auto; top: 5%; left: 10%; right: 10%; bottom: 5%;">
+  <ion-header-bar>
+    <h1 class="title">PinPopUP</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closePinPopUp()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+      <div class="DivPOITemplatePopUpTitle fl" id="TMPLT_PopUpAddPlace" ng-controller="PlacePinPopUpInController">
+        <div class="DivPopUpTitlePOI" style="cursor: default; width: 256px;">
+            <div class='DivVerticalMiddle'>
+                <div class='cabBackground'>
+					 <input type='hidden' class='hiddenPOIlat' value="{{place.LAT}}" ng-model="place.LAT" />
+                     <input type='hidden' class='hiddenPOIlng' value="{{place.LNG}}" ng-model="place.LNG" />
+                     <input type='hidden' class='hiddenPersonPOIId' value="{{place.personid}}"  ng-model="place.personid" />
+					 <input type='hidden'  value="{{place.personid}}"  ng-model="place.address" />
+					 
+                    <a href='javascript:void(0);' onclick='javascript:ShowStreetView({{place.LAT}},{{place.LNG}});'>
+                        <img src="../../DATA/images/cab-icon.png" class='DivInfoBoxTitleLeftImgWidth' />
+                    </a>
+                </div>
+                <div class='DivInfoBoxTitleContentWidth' style='width: 150px;'>
+                    <h4 class='textcenter margin0' ng-model="place.PLACETITLE">
+                        {{place.PLACETITLE}}</h4>
+                </div>
+                <div class='DivInfoBoxRightContentWidth'>
+                    <a href='javascript:void(0);' value='linkValue' class='linkDispalyPopFullContent'
+                        to='down'>
+                        <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth  PopupArrowImageDown'
+                            onclick="javascript:hidePopUpDesc(this)" src="../../DATA/images/Map_pins/arrow_down.png" />
+                        <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth PopupArrowImageRight hide'
+                            onclick="javascript:showPopUpDesc(this)" src="../../DATA/images/Map_pins/arrow_right.png" />
+                    </a>
+                </div>
+            </div>
+            <div class='DivPOIDivDescription BusinessInfowindow margintop5' style="width: 245px;">
+                <div class="tempLiveMapPOIDivPopUpDescriptionContent">
+
+                    <div class="DivPlaceReoveScreen" style="display: inline-block;">
+                      <form id="frmPointOfInterest" name="frmPointOfInterest"  method="post" class="fl frmPOI"
+                        style="width: 100%;">
+                        <div class="fl marginright10">
+                            <div class="fl imgRounded image-container" style="cursor: pointer;" onclick="OpenPOIFileUploadOptions(this)">
+                                <img src="https://www.safecab.com/DATA/images/UserDetails/users.png" class="PinPopUpDescriptionWindowImage  POIPic">
+                                <div class="after">
+                                    <img src="https://www.safecab.com/DATA/images/slr_camera2.png" style="margin-top: 15px;" /></div>
+                                    <label style="clear:both;padding:0px;padding-left:5px;" class="fl">(Max size 2mb)</label>
+                            </div>
+                            <input type="file" class="POItxtimageFile" style="display: none;" onchange="POIImageUploadStuff(event)" />
+                           
+                              <div class="fl margintop5" style="margin-top: 20px;">
+                            <label class='lblStartAddressPopUpSmallTitles' style="padding: 0px 0px 0 0px !important">
+                                Place:</label>
+                        </div>
+                        <input type="text" class="txtbox txtPointOfInterestName" style="width: 118px !important;"
+                            value="{PLACE}" />
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div class="fl" style="margin-top:15px;">
+                            <label class='lblStartAddressPopUpSmallTitles' style="width: 80px;">
+                                Address:</label>
+                        </div>
+                        <div class="fl" style="margin-top:15px;">
+                            <div class="lblUserCurrentAddress padding5 BoxIndentedStyle" style="width: 132px;
+                                float: left;" >
+                                {{place.address}}</div>
+                        </div>
+                       
+                      
+                        <div class="clear">
+                        </div>
+                        <div>
+                            <input type='button' class='btnyellow fr margin5' value='Confirm' ng-click="POIConfirmUserLocation()' />
+                        </div>
+                       
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </ion-content>
+</ion-modal-view>

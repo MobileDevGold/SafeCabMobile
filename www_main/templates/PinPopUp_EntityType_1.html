@@ -1,0 +1,115 @@
+<div class="testmodal">
+<ion-modal-view class="PinPopupE1Modal" style="width: 84%; height: auto; top: 5%; left: 10%; right: 10%; bottom: 5%;overflow:hidden;">
+  <!--<ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closePinPopUpE1()">Close</button>
+    </div>
+  </ion-header-bar>-->
+  <ion-content>
+  
+  <input type="button"  style="display:none;" value="1234" />
+  <div class="divUserData">
+       <div class='DivPopTitle DivPopUpTitle fl' style='width:265px !important;margin-top:20px;'><input type='hidden' value='B' class='txtHiddenUserType' />
+                                <div class='DivVerticalMiddle'>
+                                        <div class='cabBackground'><a href="javascript:void(0);" onclick="javascript:ShowStreetView({LAT},{LNG});"><img src="{CABIMAGE}" style='width: 23px; vertical-align: middle;height:19px;'/></a></div>
+                                           <div class='DivInfoBoxTitleContentWidth' >
+                                                <h5 class='DivInfoBoxTitleContentText'>{ENTITYTITLE}</h5>
+                                                <div><div class='MainStar fl' style='margin-left:23px;'><div class='smallstar" + objBusiness.Rating + " fl'></div></div>&nbsp;&nbsp; {CABREVIEWS} Reviews
+                                           </div></div>
+                                           <div class='DivInfoBoxRightContentWidth' >
+                                            <a href='javascript:void(0);'  value='linkValue' class='linkDispalyPopFullContent'>
+                                                <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth PopupArrowImageRight ' onclick='javascript:showPopUpDesc(this)' src='img/Map_pins/arrow_right.png'/>
+                                                <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth PopupArrowImageDown hide'  onclick='javascript:hidePopUpDesc(this)' src='img/Map_pins/arrow_down.png'/>
+                                              </a>
+                                           </div>
+								</div>
+										   <div class='BusinessInfowindow' style='width:250px;'>
+                                <div class='DivParentPopUpDescription' style='width:100%;' >
+                                <div>
+                                    <div class='fl imgRounded' style='margin-top:-5px;'>
+                                        <img src='{CABIMAGE}' class='PinPopUpDescriptionWindowImage'/>
+                                     </div>
+                                     <div class='DivInfoBoxDescriptionWindowLeftSideContent'>
+                                        <div class='h2InfoBoxDescriptionWindowLandPhone textcenter' style='float:none;'>
+										<h2 class="h2PinPopup"><img src="{CABTELEPHONECOUTRYCODEIMAGE}" class="PhoneCountryFlagIcon">{CABTELEPHONE}</h2>
+										<a href='javascript:void(0);' onclick='{COMMENTDATA}'>
+                                            <div class='DivInfoBoxDescriptionWindowRating'>
+                                                <div class='MainBigStar' style='margin:0px auto;border-bottom:1px solid orange;'>
+                                                    <div class='Bigstar{RAINGSTAR}' ></div>
+                                                   </div>
+                                             </div>
+                                          </a><div>{BTNFAVOURITES}</div>
+                                        </div>
+                                        </div>
+                                 </div>
+
+                                    <div class='clear'></div>
+                                    <div>
+                                    <p class='PElementInfoBoxDescriptionWindow BoxIndentedStyle'>{ENTITYADDRESS}</p>
+                                    <div class='clear'></div><div class='textcenter'style="margin-top:8px;" >{BTNBOOKING}&nbsp;&nbsp; {BTNCONTACTUS} </div>
+                                    <div class='clear'></div><div class='textcenter DivInfoBoxDescriptionWindowTime'><span>Available: {STARTTIME} - {ENDTIME}</span></div>
+                                    <div class='textcenter' style='width:224px;margin:0px auto;'>{BUSINESSCABTYPES}</div>
+                                    </div></div>
+                                    <div class='DivBusinessComments'>
+										<div class='DivUserComments hide'>
+                                       <div>
+                                        <div class='fl imgRounded'>
+                                            <img src='{CABIMAGE}' class='PinPopUpDescriptionWindowImage'/>
+                                        </div>
+                                        <div class='DivInfoBoxDescriptionWindowLeftSideContent'>
+                                <div class='DivBookingContentLandPhone textcenter' style='float:none;'>
+                                <h2 class='h2PinPopup'>Comments</h2>
+                                    <div class='h2InfoBoxDescriptionWindowLandPhone' style='float:none;'><div><h2 class='h2PinPopup textcenter'><img src="{CABTELEPHONECOUTRYCODEIMAGE}" class='PhoneCountryFlagIcon'/>{CABTELEPHONE}</div></h2><div class='DivInfoBoxDescriptionWindowRating' style='padding-left:20px !important;'>
+                                        <div class='MainBigStar' style='margin:0px auto;display:inline-block;'>
+                                                  <div class='Bigstar{RAINGSTAR}' ></div>
+                                           </div>
+                                        </div>
+                                        </div></div></div></div>
+                                        <div class='clear'></div>
+                                        <div class='DivUserCommentsInner CustomScroll DivReviewInsidePopUp BoxIndentedStyle'>
+										</div><div class='clear'></div><div class='clear'></div>
+										<div class="clear"></div>
+											<a href='javascript:void(0);' onclick='javascript:CloseCommentsWindow($(this));' class='linkCancelPopup' style='float:right !important;'>Cancel</a><div class='clear'></div>
+											</div>
+									</div>
+                                    <div class='DivBooking'>
+										<div class="DivBookingPopUp hide">
+											<h2>Booking page</h2>
+										</div>
+									</div>
+                                    <div class='DivContactUs'>
+										<div class='DivContact hide'>
+                            <div class='DivContactInner clear' >
+                            <div>
+                            <div class='fl imgRounded'>
+                                <img src='{CABIMAGE}' class='PinPopUpDescriptionWindowImage'/>
+                            </div>
+                            <div class='fl DivInfoBoxDescriptionWindowLeftSideContent textcenter' style='float:none;'>
+                                <h2 class='h2PinPopup'>Contact Us</h2>
+                                    <div>
+                                        <h2 class='h2PinPopup'><img src="{CABTELEPHONECOUTRYCODEIMAGE}" class='PhoneCountryFlagIcon'/>{CABTELEPHONE}</h2>
+                                         <div class='MainBigStar' style='margin:0px auto;display:inline-block;'>
+                                           <div class='Bigstar{RAINGSTAR}' ></div>
+                                           </div>
+										   <div class='clear'></div></div></div>
+                             </div>
+                             <div class='clear'></div>
+                             <form id='frmContactUsChatReply' name='frmContactUsChatReply'>
+                             <div class='fl' style='width:100%;'><hr  style='margin:4px !important;'/>
+                                <div class='fl' style='border-color:#894d05;'><img src='{CABIMAGE}'  class='DivContactUsPageUserImg'/></div>
+                                <textarea rows='3' class='borderRadius fr marginleft5 textareaChattext' ng-model="test.TextareContactUsMessage" style='border-color:#894d05;width: 200px;' placeholder='Write you message here...'></textarea>
+                             </div>
+                             <div class='fr' style='margin-top:2px !important;'>
+                                 <a href='javascript:void(0);' onClick='javascript:SendChatMessage({BUSINESSID},{DRIVERID})' class='fl ImgBusinessContactUsMessage'>
+                                <a href='javascript:void(0);' onclick='javascript:CloseContactWindow($(this));' class='linkCancelPopup'>Cancel</a>
+                             </div>
+                             </form>
+                             <div class='clear'></div>
+                    </div><div class='clear'></div></div>
+									</div>
+                        </div>
+    </div>
+	</div>
+  </ion-content>
+</ion-modal-view>
+</div>

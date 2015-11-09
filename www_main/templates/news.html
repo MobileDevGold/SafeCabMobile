@@ -1,0 +1,57 @@
+<ion-view view-title="{{ friend.name }}">
+<ion-nav-buttons side="left">
+	<button class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="CheckUserIsOnline()">
+    </button>
+ </ion-nav-buttons>
+  <ion-nav-title>
+        <h3 style="color:#FF9600;margin-top:10px;">Safe Cab</h3>
+  </ion-nav-title>
+  <ion-nav-buttons side="right">
+     <a class="button button-icon icon ion-compose" ng-click="openPopup()">
+	 </a>
+  </ion-nav-buttons>
+ <ion-content has-header="true" has-footer="true" padding="true" on-swipe-left="onSwipeLeft();" on-swipe-right="onSwipeRight();">
+	     <div class="center">
+              <div style="padding:10px; margin-bottom:100px;">
+                    <h3>LATEST NEWS</h3>
+                    <h4 class="h4news">This is a test news header</h4>
+                    <span class="newsdate">17 Feb, 2013</span>
+                    <p class="news">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, sit qui minima sequi ea aperiam eaque molestiae corporis obcaecati placeat commodi cupiditate hic quae. Nesciunt, reprehenderit libero ad nisi dicta.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, sit qui minima sequi ea aperiam eaque molestiae corporis obcaecati placeat commodi cupiditate hic quae. Nesciunt, reprehenderit libero ad nisi dicta.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, sit qui minima sequi ea aperiam eaque molestiae corporis obcaecati placeat commodi cupiditate hic quae. Nesciunt, reprehenderit libero ad nisi dicta.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, sit qui minima sequi ea aperiam eaque molestiae corporis obcaecati placeat commodi cupiditate hic quae. Nesciunt, reprehenderit libero ad nisi dicta.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, sit qui minima sequi ea aperiam eaque molestiae corporis obcaecati placeat commodi cupiditate hic quae. Nesciunt, reprehenderit libero ad nisi dicta.</p>
+                    <h4 class="h4news">This is a test news header</h4>
+                    <span class="newsdate">17 Feb, 2013</span>
+                    <p class="news">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, sit qui minima sequi ea aperiam eaque molestiae corporis obcaecati placeat commodi cupiditate hic quae. Nesciunt, reprehenderit libero ad nisi dicta.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, sit qui minima sequi ea aperiam eaque molestiae corporis obcaecati placeat commodi cupiditate hic quae. Nesciunt, reprehenderit libero ad nisi dicta.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, sit qui minima sequi ea aperiam eaque molestiae corporis obcaecati placeat commodi cupiditate hic quae. Nesciunt, reprehenderit libero ad nisi dicta.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, sit qui minima sequi ea aperiam eaque molestiae corporis obcaecati placeat commodi cupiditate hic quae. Nesciunt, reprehenderit libero ad nisi dicta.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, sit qui minima sequi ea aperiam eaque molestiae corporis obcaecati placeat commodi cupiditate hic quae. Nesciunt, reprehenderit libero ad nisi dicta.</p>
+                    <h4 class="h4news">This is a test news header</h4>
+                    <span class="newsdate">17 Feb, 2013</span>
+                    <p class="news">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, sit qui minima sequi ea aperiam eaque molestiae corporis obcaecati placeat commodi cupiditate hic quae. Nesciunt, reprehenderit libero ad nisi dicta.</p>
+                </div>
+            </div>
+	</ion-content>
+	<div class="bar bar-footer row tab-buttons-bar">
+		<div class="tabs tabs-icon-top " >
+		  <a class="tab-item" href="#/app/map" style="color:#FF9600;font-size:15px;">
+			<i class="icon ion-home"></i>
+			Map
+		  </a>
+		 <a class="tab-item" href="#/app/features" style="color:#FF9600;font-size:15px;">
+			<i class="icon ion-star"></i>
+			Features
+		  </a>
+		</div>
+    </div>
+</ion-view>
+<script type="text/javascript">
+		  var showTotalChars = 150;
+            var showStr = "Read More";
+            var hideStr = "Hide";
+
+            $('.news').each(function () {
+                var content = $(this).text();
+                if (content.length > showTotalChars) {
+                    var con = content.substr(0, showTotalChars);
+                    var hcon = content.substr(showTotalChars, content.length - showTotalChars);
+                    var txt = con + '<span class="dots">...</span><span class="moreContent"><span>' + hcon + '</span><a href="" class="showMoreTxt" onClick="showmore(this)">' + showStr + '</a></span>';
+                    $(this).html(txt);
+                }
+            });
+</script>
+

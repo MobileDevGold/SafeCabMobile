@@ -1,0 +1,42 @@
+<ion-view view-title="{{ friend.name }}">
+<ion-nav-buttons side="left">
+	<button class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="CheckUserIsOnline()">
+    </button>
+ </ion-nav-buttons>
+  <ion-nav-title>
+        <h3 style="color:#FF9600;margin-top:10px;">Safe Cab</h3>
+  </ion-nav-title>
+  <ion-nav-buttons side="right">
+     <a class="button button-icon icon ion-compose" ng-click="openPopup()">
+	 </a>
+  </ion-nav-buttons>
+ <ion-content has-header="true" has-footer="true" padding="true" on-swipe-left="onSwipeLeft();" on-swipe-right="onSwipeRight();">
+	  <div style="padding:10px;">
+                    <h5>INTERESTED IN OUR SERVICE?</h5>
+                    <div style="margin-bottom:100px;">
+                        <img src="img/safecab.png" style="float:left; margin: 0 10px 0 0;width:50px;" />
+                        <p>SafeCab Ltd is a small company aiming to provide a top quality service at a price you would be happy to pay.</p>
+
+                        <p>Book a SafeCab, rate the driver, log the cost and even take photos along the way. We can help track your taxi use end to end for reporting or just for those times when you need piece of mind for loved ones or yourself.</p>
+
+                        <p>Once verified SafeCab firms can advertise, receive bookings, manage their drivers work, track their cars on line and even see how users are rating their cabs and drivers.</p>
+
+                        <p>By creating an open SafeCab network where taxi users can find, book and rate verified firms and their drivers at the click of a button owners are able to improve the service and generate new business from serious customers.</p>
+
+                        <p>Our only aim it to reward those SafeCab users who make the effort and provide a reliable, friendly and safe experience while driving others out.</p>
+                    </div>
+                </div>
+	</ion-content>
+	<div class="bar bar-footer row tab-buttons-bar">
+		<div class="tabs tabs-icon-top " >
+		  <a class="tab-item" href="#/app/map" style="color:#FF9600;font-size:15px;">
+			<i class="icon ion-home"></i>
+			Map
+		  </a>
+		   <a class="tab-item" href="#/app/features" style="color:#FF9600;font-size:15px;">
+			<i class="icon ion-star"></i>
+			Features
+		  </a>
+		</div>
+    </div>
+</ion-view>

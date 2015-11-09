@@ -1,0 +1,42 @@
+<ion-view view-title="Message">
+<ion-nav-bar>
+  <ion-nav-back-button class="button-clear">
+    <i class="ion-arrow-left-c"></i> Back
+  </ion-nav-back-button>
+</ion-nav-bar>
+ <ion-content has-header="true" has-footer="true" padding="true" on-swipe-left="onSwipeLeft();" on-swipe-right="onSwipeRight();">
+	  
+		<form id="frmMessageReply" name="frmMessageReply">
+                <input type="hidden" id="hiddenChatThreadId" name="hiddenChatThreadId" class="hiddenChatThreadId" />
+                <input type="hidden" id="SenderBusinessId" name="SenderBusinessId" />
+                <input type="hidden" id="SenderBusinessContactId" name="SenderBusinessContactId" />
+                <input type="hidden" id="SenderDriverId" name="SenderDriverId" />
+                <input type="hidden" id="SenderPersonId" name="SenderPersonId" />
+                <input type="hidden" id="SenderBookingId" name="SenderBookingId" />
+                <input type="hidden" id="SenderAdvertId" name="SenderAdvertId" />
+                <div class="fl" style="margin: 5px; width: 95%;">
+                    <textarea id="textareaReplytext" rows="3" name="textareaReplytext" class="borderRadius"
+                        style="width: 100%;" placeholder="Write you message here..."></textarea>
+                </div>
+                <a href="javascript:void(0);" onclick="closeChatReplyDiv(this)" class="linkCancel">Cancel</a>
+                <input type="button" id="btnSubmitMessageReply" name="btnSubmitMessageReply" value="Send"
+                    class="btnyellow fr margin5" ng-click="SendMessage()" />
+                <div class="clear">
+                </div>
+                </form>
+			<div class="DivUserPerviousMessages padding5">
+                </div>
+	</ion-content>
+	<div class="bar bar-footer row tab-buttons-bar">
+		<div class="tabs tabs-icon-top " >
+		  <a class="tab-item" href="#/app/map" style="color:#FF9600;font-size:15px;">
+			<i class="icon ion-home"></i>
+			Map
+		  </a>
+		  <a class="tab-item" href="#/app/cabnow" style="color:#FF9600;font-size:15px;">
+			<i class="icon ion-star"></i>
+			Cab Now
+		  </a>
+		</div>
+    </div>
+</ion-view>

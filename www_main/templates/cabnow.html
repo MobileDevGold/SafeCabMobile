@@ -1,0 +1,206 @@
+<ion-view view-title="Cab Now">
+<ion-nav-buttons side="left">
+	<button class="button button-icon button-clear ion-navicon" menu-toggle="left" ng-click="CheckUserIsOnline()">
+    </button>
+ </ion-nav-buttons>
+  <ion-nav-title>
+        <h3 style="color:#FF9600;margin-top:10px;">Cab Now</h3>
+  </ion-nav-title>
+  <ion-nav-buttons side="right">
+     <a class="button button-icon icon ion-compose" ng-click="openPopup()">
+	 </a>
+  </ion-nav-buttons>
+ <ion-content has-header="true" has-footer="true" padding="true" on-swipe-left="onSwipeLeft();" on-swipe-right="onSwipeRight();">
+	  <div style="padding:10px;" class="DivCabNowData"> 
+		 <div class="DivMainBookingPart" style="margin-top:5px;">
+             <div class="hide">
+                <select class="seleBusinesBookingPOIAddress" mobiscroll-select></select>
+            </div>
+                 <div class="DivBooking">
+                        <form id="frmBooking" name="frmBooking" method="post" style="margin-top: 10px;">
+                        <input type="hidden" id="hiddenBusinessId" name="hiddenBusinessId" value="0">
+                        <input type="hidden" id="hiddenBookNowDate" name="hiddenBookNowDate">
+                        <input type="hidden" id="hiddenBookToDate" name="hiddenBookToDate">
+                        <div class="clear">
+                        </div>
+                        <div class="fl">
+                            <div class="fl">
+                            </div>
+                            <div class="div_Booking_img fl" style="width: 33px; padding: 0px 6px 0px 1px;">
+                                <img src="https://www.safecab.com/DATA/images/New_bits/date_small.png" class="div_Booking_imgwidth"
+                                    style="width: 33px;">
+                            </div>
+                            <div class="div_Booking_textbox fl" style="width: 180px;">
+                                <input type="text" id="txtAddBookingDateTime"  mobiscroll-datetime  mobiscroll-options="{dateFormat: 'dd M yyyy',dateOrder:'dd M yyyy'}" name="txtAddBookingDateTime" class="div_Booking_lbldatetime_txtbox txtmobi vanityUrlFontSize"
+                                    readonly="readonly" ng-model="BookingDateTime" style="width: 162px;" />
+                            </div>
+							<ul id="genderSelect" ng-model="selectedGender" mobiscroll-list="{enhance: true}" mobiscroll-image>
+							</ul>
+                            <div class="clear">
+                            </div>
+                            <div class="div_Booking_img fl DivBusinessVanityPageBookingPassengerStuff" style="padding: 0px 6px 0px 1px;">
+                                <img src="https://www.safecab.com/DATA/images/New_bits/number_of_passengers.png" class="div_Booking_imgwidth"
+                                    alt="">
+                            </div>
+                            <div class="div_Booking_textbox fl" style="width: 120px !important;">
+                                <input type="text" id="seleBusinessVanityPagePassengersType" class="div_Booking_lblVehicleType_txtbox txtmobi vanityUrlFontSize"
+                                    name="seleBusinessVanityPagePassengersType" mobiscroll-list="{enhance: true}" mobiscroll-image readonly="readonly" />
+                            </div>
+                            <div class="hide">
+                                <ul id='DivCarType'>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                        <div class="fl">
+                            <div class="div_Booking_img fl" style="margin-top:10px;padding: 0px 1px 0px 1px;">
+                                <label for="txtBusinessVanityPagefromAddress">
+                                    From</label>
+                            </div>
+                            <div class="fl">
+                                <input type="hidden" id="hiddenFromStartlat" name="hiddenFromStartlat" value="">
+                                <input type="hidden" id="hiddenFromStartlng" name="hiddenFromStartlng" value="">
+                                <textarea id="txtBusinessVanityPagefromAddress" rows="2" name="txtBusinessVanityPagefromAddress"
+                                class="div_BusinessVanityPage_Booking_lblfromAddress_txtbox vanityUrlFontSize fl" placeholder="From" style="width:162px;" ng-model="cabnow.fromaddress" ng-blur="ValidAddress('1');"></textarea>
+								<p style="color:red;" class="alert" ng-show="!frmBooking.txtBusinessVanityPagefromAddress.$valid">field is required.</p>
+                                    <input type="button" class="btnyellow fr DivVanityPageSelectMap" id="btnSetFromMap" onclick="DisplayBookingMap(this,1)"  name="btnSetFromMap" value="Map"  style="margin:4px;"/>
+                                <label for="txtBusinessVanityPagefromAddress" id="lblfromAddress" generated="true"
+                                    class="error " style="display: none !important;">
+                                    Required</label>
+                            </div>
+                            <div class="clear">
+                            </div>
+                            <div class="clear">
+                            </div>
+                            <div class="div_Booking_img fl" style="margin-top:10px;padding: 0px 20px 0px 1px;">
+                                <label for="txtBusinessVanityPagefromAddress">
+                                    To</label>
+                            </div>
+                            <div class="fl">
+                                <input type="hidden" id="hiddenEndlat" name="hiddenEndlat" />
+                                <input type="hidden" id="hiddenEndlng" name="hiddenEndlng" />                             
+                                <textarea id="txtBusinessVanityPageToAddress" rows="2" name="txtBusinessVanityPageToAddress"
+                                class="div_BusinessVanityPage_Booking_lblToAddress_txtbox vanityUrlFontSize fl" placeholder="Will Tell driver" style="width:162px;" ng-blur="ValidAddress('2');" ></textarea>
+                                
+                                    <input type="button" class="btnyellow fr DivVanityPageSelectMap" id="btnSetToMap" onclick="DisplayBookingMap(this,2)" name="btnSetToMap" value="Map" style="margin:4px;"/>
+                                <label for="txtBusinessVanityPagefromAddress" id="lblToAddress" generated="true"
+                                    class="error hide">
+                                    Required</label>
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div class="fl" >
+                            <div class="DivVanityPageDisablePart">
+                                <div class="div-form-element-control paddingLeft5 divBusinessVanityPagePassengerBookingDisableAccess fl" style="padding-left:35px;">
+                                    <div class="DivPassengerBookingDisableAccess DivDisableAccessOff" to="on" style="height: 30px;
+                                        padding: 7px 0px 0px 22px;">
+                                        <label style="margin: 0px !important; padding: 7px !important;" class="safeCabBaseColor"
+                                            for="chkPopDisableAccess">
+                                            Access</label></div>
+                                </div>
+                                <div class="fl paddingLeft5">
+                                </div>
+                                <div class="div-form-element-control divPassengerBookingFemaleDriver fl">
+                                    <div class="DivPassengerBookingFemaleDriver DivFemaleDriverOff" to="on" style="height: 30px;
+                                        padding: 7px 0px 0px 22px;">
+                                        <label style="margin: 0px !important; padding: 7px !important;" class="safeCabBaseColor"
+                                            for="chkPopFemaleDriver">
+                                            Driver</label></div>
+                                </div>
+                                <div class="fl paddingLeft5">
+                                </div>
+                            </div>
+                            <div class="fl">
+                                <textarea id="textareaFeedBack" rows="1" name="textareaFeedBack" class="div_Booking_Feedback_textarea fl hide margintop5 vanityUrlFontSize"
+                                    placeholder="FeedBack"></textarea>
+                            </div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div class="DivBookButtonPart">
+                            <textarea id="textareaBusinessVanityPageSpecialRequirement" rows="2" name="textareaBusinessVanityPageSpecialRequirement"
+                                class="fl" placeholder="Special Requirements" style="margin-left: 40px; font-size: 16px;"></textarea>
+                            <div class="clear">
+                            </div>
+                            <div style="margin-top:3px;"></div>
+                            <form id="frmUserAuten" name="frmUserAuten">
+                            <input type="button" id="btnSubmitUserData" class="fl btnyellow hide" name="btnSubmitUserData"
+                                value="Submit" />
+                            </form>
+                            <div>
+                            <div class="fl">
+                               
+                    <div class="DivBookingErrorMessage fl hide" style="color: red; margin-left: 48px;margin-top:8px;">
+                    </div>
+                    <div class="clear">
+                    </div>                    
+                    <div class="DivBookingSuccessMessage fl hide" style="color: Green; margin-left: 48px;margin-top:8px;">
+                    </div>
+                    <div class="clear">
+                    </div>
+                        </div>
+                            </div>
+                                 <div class="fl">
+                                <input type="button" id="btnBusinessVanityPageBookNow" onclick="AddBookingData()"
+                                    name="btnBusinessVanityPageBookNow" class="btnyellow custom_btn_height fl"
+                                    value="Book Now" style="margin-left:40px;">
+                                   <input type="button" id="Button1" onclick="AddBookingQuoteNowData()"
+                                    name="btnBusinessVanityPageBookNow" class="btnyellow custom_btn_height fl"
+                                    value="Quote Now" style="margin-left:10px;">
+                            </div>
+                                   <div class="clear">
+                            </div>
+                            </div>
+                                                
+                        </form>
+                    </div>
+                 <div class="DivBookingMap hide"  style="width:99%;">
+                        <div class="clear">
+                        </div>
+                        <div class="lblCurrentMapAddress fl"></div>
+                        <div class="DivVanityFromUrlPlace hide" >
+                                <a href="javascript:void(0);" onclick="DisplayBusinesBookingPlacesPopUp(this,1)" style="color: #ff9600;">Place</a>
+                                </div>
+                        <div class="fl DivVanityToUrlPlace hide" >
+                                <a href="javascript:void(0);" onclick="DisplayBusinesBookingPlacesPopUp(this,2)" style="color: #ff9600;">Place</a>
+                                </div>
+                        <a href="javascript:void(0);" class="fr" onclick="CloseSelectBookingMap()" style="color:#ff9600;">Back</a>
+                        <div class="clear">
+                        </div>
+                        <div class="divMapChat" style="position: relative; top: 12px; width: 100%; z-index: 100;">
+                            <div class="fl DivHomePageSearchbox">
+                                <input type="text" class="txtBusinessVanityPagesearchbox vanityUrlFontSize" id="txtSearchaddress"
+                                    name="txtSearchaddress" g-places-autocomplete ng-model="address" /></div>
+                            <div class="fl">
+                                <div class="clear">
+                                </div>
+                                <button type="button" id="btnmove" name="btnmove" value="Go To" class="btn-1 btnyellow btnGoto"
+                                    style="cursor: pointer;">
+                                    Go To</button>
+                            </div>
+                        </div>
+                        
+                        <div class="clear">
+                        </div>
+                        <div id="VanityBookingmap" class="BusinessVanityPageStartmap" style="height: 260px;width: 90%; position: absolute; margin-top: -28px;margin-left:5px;">
+                        </div>
+                    </div>
+            </div>
+	  </div>
+	  <div class="DivCabNowError hide">First logged then you will able seen your friend list...
+	  </div>
+	</ion-content>
+	<div class="bar bar-footer row tab-buttons-bar">
+		<div class="tabs tabs-icon-top " >
+		  <a class="tab-item" href="#/app/map" style="color:#FF9600;font-size:15px;">
+			<i class="icon ion-home"></i>
+			Map
+		  </a>
+		  <a class="tab-item" href="#/app/cabnow" style="color:#FF9600;font-size:15px;">
+			<i class="icon ion-star"></i>
+			Cab Now
+		  </a>
+		</div>
+    </div>
+</ion-view>

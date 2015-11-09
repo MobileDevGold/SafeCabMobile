@@ -1,0 +1,46 @@
+
+<ion-modal-view class="loginModal">
+  <ion-header-bar>
+    <h1 class="title">Register</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeRegister()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+  <!---->
+    <form ng-submit="doRegister()" ng-controller="RegisterController" name="RegisterForm">
+	
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">FullName</span>
+          <input type="text" ng-model="registerData.fullname" id="txtFullName"  name="txtFullName">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Telephone</span>
+         
+		  <input type="number" class="form-control" ng-minlength="5" ng-maxlength="11"  id="inputPhone" name="txtTelephone" placeholder="Phone" ng-model="registerData.telephone" ng-required="true" ng-blur="callPhoneService();">
+		  <span style="color:red;" class="help-block" ng-show="RegisterForm.txtTelephone.$error.required || RegisterForm.txtTelephone.$error.number">Valid phone number is required</span>
+            <span style="color:red;"  class="help-block" ng-show="((RegisterForm.txtTelephone.$error.minlength || RegisterForm.txtTelephone.$error.maxlength) && RegisterForm.txtTelephone.$dirty) ">phone number should be digits</span>
+        </label>
+		<label class="item item-input">
+          <span class="input-label">Email</span>
+          <input type="email" name="input" ng-model="registerData.email" required>
+			 <div style="color:red" class="error" ng-show="myForm.input.$error.required || myForm.input.$error.email">Please input valid email!</div>
+        </label>
+		<label class="item item-input">
+          <span class="input-label">Date of birth</span>
+          <input type="text" ng-model="registerData.DOB" class="txtRegDOB" id="txtDOB"  name="txtDOB" onclick="DisplayDOBMobilscroll()">
+        </label>
+        <!-- zheng start-->
+        <div>
+           <input mobiscroll-datetime ng-model="birthday" type="text"/>
+        </div>
+        <!-- zheng end-->
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Register</button>
+        </label>
+      </div>
+    </form>
+  </ion-content>
+</ion-modal-view>
+

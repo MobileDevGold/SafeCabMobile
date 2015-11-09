@@ -1,0 +1,301 @@
+<div class="E16modal">
+<ion-modal-view class="PinPopupE16Modal" style="width: 84%; height: auto; top: 5%; left: 10%; right: 10%; bottom: 5%;">
+  <!--<ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closePinPopUpE1()">Close</button>
+    </div>
+  </ion-header-bar>-->
+  <ion-content>
+  
+  <input type="button"  style="display:none;" value="1234" />
+  <div class="divE16Data">
+        <!-- Booking Status 16 PopUp Template Start -->
+    <div class="TMPLT_BusinessBooking_16">
+        <div class="TMPLT_DivBusinessPopUpBooking_16_Title DivPopUpTitle" style="width: 265px;">
+            <input type="hidden" class="hidden_Booking_Status_16_Booking_BUSINESSID" value="{Booking_Status_16_Booking_BUSINESSID}" />
+            <input type="hidden" class="hidden_Booking_Status_16_Booking_DRIVERID" value="{Booking_Status_16_Booking_DRIVERID}" />
+            <input type="hidden" class="hidden_Booking_Status_16_Booking_PERSONID" value="{Booking_Status_16_Booking_PERSONID}" />
+            <input type="hidden" class="hidden_Booking_Status_16_Booking_BOOKINGID" value="{Booking_Status_16_Booking_BOOKINGID}" />
+            <input type="hidden" class="hidden_Booking_Status_16_Booking_VEHICLETYPE" value="{Booking_Status_16_Booking_VEHICLETYPE}" />
+            <div class='DivVerticalMiddle'>
+                <div style='margin: 2px 0px 0px 5px; float: left; width: 23px; height: 23px; background-color: #EF9300;
+                    border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border: 2px solid #FFF8D1;
+                    text-align: center; box-shadow: 1px 2px 2px #808080; -webkit-box-shadow: 1px 2px 2px #808080;
+                    -moz-box-shadow: 1px 2px 2px #808080;'>
+                    <a href='javascript:void(0);' onclick='javascript:ShowStreetView({LAT},{LNG});'>
+                        <img src='{BUSINESSBOOKING_16_CABIMG}' style='width: 23px; vertical-align: middle;height:19px;' />
+                    </a>
+                </div>
+                <div class='DivInfoBoxTitleContentWidth'>
+                    <h5 class='DivInfoBoxTitleContentText'>
+                        {BUSINESSBOOKINGTITLE}</h5>
+                    <div>
+                        <div class='MainStar fl divBooking_16_Booking_MainStar_{Booking_Status_16_Booking_BOOKINGID}' style='margin-left: 23px;'>
+                            <div class='smallstar{BUSINESSBOOKING_16_RATING} fl '>
+                            </div>
+                        </div>
+                        <div class="fl divBooking_16_Booking_Review_{Booking_Status_16_Booking_BOOKINGID}" style="padding:0px 3px;">{BUSINESSBOOKING_16_COMMENTCOUNT}</div>Reviews
+                    </div>
+                </div>
+                <div class='DivInfoBoxRightContentWidth'>
+                    <a href='javascript:void(0);' value='linkValue' class='linkDispalyPopFullContent'
+                        to='down'>
+                        <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth PopupArrowImageRight hide'  onclick="javascript:showPopUpDesc(this)" src="https://www.safecab.com/DATA/images/Map_pins/arrow_right.png"/>
+                        <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth PopupArrowImageDown' onclick="javascript:hidePopUpDesc(this)" src="https://www.safecab.com/DATA/images/Map_pins/arrow_down.png" />
+                    </a>
+                </div>
+            </div>
+            <div class='DivBookingStatus_16 BusinessInfowindow margintop5' style="width: 250px;">
+                <div class='DivParentPopUpDescription DivInlineBlock_100_Percent_width'>
+                <input type="hidden" class="hiddenBusinessBooking_16_BusinessId" value="{Booking_Status_16_Booking_BUSINESSID}" />
+                <input type="hidden" class="hiddenBusinessBooking_16_DriverId" value="{Booking_Status_16_Booking_DRIVERID}" />
+                <input type="hidden" class="hiddenBusinessBooking_16_BookingId" value="{Booking_Status_16_Booking_BOOKINGID}" />
+                <input type="hidden" class="hiddenBusinessBooking_16_PersonId" value="{Booking_Status_16_Booking_PERSONID}" />
+                    <div>
+                        <div class='fl imgRounded' style="display:{BUSINESSBOOKING_16_UPLOAD_WITHOUT_TRACKING_DIV}">
+                            <img src='{BUSINESSBOOKING_Inner_16_CABIMG}' class='PinPopUpDescriptionWindowImage Booking_Status_16_Booking_PersonImage'  title="{Booking_Status_16_Booking_Alt_Text}" style="cursor:{BUSINESSBOOKING_16_INNER_IMAGE_CURSOR_TYPE};"/>
+                        </div>
+                        <div class='fl imgRounded' style="display:{BUSINESSBOOKING_16_UPLOAD_TRACKING_DIV}">
+                                <a onclick="OpenBusinessTrackingFileUploadOptions()">
+                                    <img src='{BUSINESSBOOKING_Inner_16_CABIMG}' class='PinPopUpDescriptionWindowImage BusinessBookingTrackingImage' style="cursor:{BUSINESSBOOKING_16_INNER_IMAGE_CURSOR_TYPE}"/>
+                                </a>
+                        </div>
+                        <div class='DivInfoBoxDescriptionWindowLeftSideContent'>
+                            <div class='h2InfoBoxDescriptionWindowLandPhone textcenter' style="float: none;">
+                                <h2 class='h2PinPopup'>
+                                    <img src='{BUSINESSBOOKING_16_COUNTRYIMG}' class='PhoneCountryFlagIcon {IMG_BUSINESSBOOKING_16_COUNTRYIMG}' />
+                                    {BUSINESSBOOKING_16_TELEPHONE}</h2>
+                                <a href='javascript:void(0);' onclick='javascript:Show_BUSINESSBOOKING_16_BusinessCommetns({Booking_Status_16_Booking_BUSINESSID},this,{Booking_Status_16_Booking_DRIVERID},{Booking_Status_16_Booking_BOOKINGID},{Booking_Status_16_Booking_PERSONID})'>
+                                    <div class='DivInfoBoxDescriptionWindowRating' style="margin: 0px auto;">
+                                        <div class='MainBigStar divBooking_16_Booking_MainBigStar_{Booking_Status_16_Booking_BOOKINGID}' style='border-bottom: 1px solid orange; margin: 0px auto;'>
+                                            <div class='Bigstar{BUSINESSBOOKING_16_RATING} '>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <input type='button' class='btnyellow' onclick='javascript:Show_Passenger_Contact({Booking_Status_16_Booking_BUSINESSID},this,{Booking_Status_16_Booking_DRIVERID},{Booking_Status_16_Booking_BOOKINGID},{Booking_Status_16_Booking_PERSONID})'
+                                    value='Contact Us' style="margin:0px auto;display:{SHOWPASSENGERCONTACTDIV}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class='clear'>
+                    </div>
+                    <div class='fl BoxIndentedStyle textcenter Div16BookingRequiredBookingDateTime' style="width: 68%;">
+                        {BUSINESSBOOKING_16_BUSINESSREQUIREDDATETIME}</div>
+                    <div class='fl Div16BookingRequiredBookingDisabledAccess' style="padding-left: 4px;">
+                        <img src='{BUSINESSBOOKING_16_BUSINESSREDISABLEDACCESSIMG}' /></div>
+                    <div class='fl Div16BookingRequiredBookingFemaleDriver' style="padding-left: 4px;">
+                        <img src='{BUSINESSBOOKING_16_BUSINESSREFEMALEDRIVERIMG}' /></div>
+                    <div class='clear'>
+                    </div>
+                    <div>
+                        <div class="DivBookingPopUPlbl">
+                            <label style="margin: 0px !important; padding: 0px !important;" class="fl">
+                                From:
+                            </label>
+                        </div>
+                        <div class='DivBookingPopUPText BoxIndentedStyle PinDetailsTextEllipsis Div16BookingFromAddress' title="{Booking_Status_16_BUSINESSFROMADDRESS_Booking_Alt_Text}">
+                            {BUSINESSBOOKING_16_BUSINESSFROMADDRESS}</div>
+                        <div class="clear">
+                        </div>
+                        <div class="DivBookingPopUPlbl">
+                            <label style="margin: 0px !important; padding: 0px !important;" class="fl">
+                                To:
+                            </label>
+                        </div>
+                        <div class='DivBookingPopUPText BoxIndentedStyle PinDetailsTextEllipsis Div16BookingToAddress' title="{Booking_Status_16_BUSINESSTOADDRESS_Booking_Alt_Text}">
+                            {BUSINESSBOOKING_16_BUSINESSTOADDRESS}</div>
+                        <div class="clear">
+                        </div>
+                        <div class="DivBookingPopUPlbl">
+                            <label style="margin: 0px !important; padding: 0px !important;" class="fl">
+                                Note:</label></div>
+                        <div class='DivBookingPopUPText BoxIndentedStyle PinDetailsTextEllipsis Div16BookingNotes' title="{Booking_Status_16_BUSINESSNOTES_Booking_Alt_Text}">
+                            {BUSINESSBOOKING_16_BUSINESSNOTES}</div>
+                        <div class="clear">
+                        </div>
+                        <div>
+                            <div class="fl DivBookingPopUPlbl"> <label style="margin: 0px !important; padding: 0px !important;margin-left: 15px;padding-top: 5px;" class="fl">
+                                Type:</label></div>
+                            <div class="fl"><img src="{BUSINESSBOOKING_16_BOOKING_STATUS_VEHICLETYPE}" class="{BUSINESSBOOKING_16_BOOKING_STATUS_VEHICLETYPE_CSS} fl"
+                            style="height: 20px;padding-top: 5px;" /></div>
+                            <div class="fl DivBookingPopUPlbl" style="padding-left:5px;width: 17%;padding-top: 5px;"> <label style="margin: 0px !important; padding: 0px !important;" class="fl">
+                                Cost:</label></div>
+                            <div class="fl BoxIndentedStyle divBooking_16_Booking_Cost_{Booking_Status_16_Booking_BOOKINGID}"  style="width:80px;">{BUSINESSBOOKING_16_BUSINESSESTIMATEDCOST}</div>
+                        </div>
+                        <div class="clear">
+                        </div>
+                        <div>
+                            <input type="button" class="btnyellow txtBookingAccept" id="Btn_Booking_Status_{Booking_Status_16_Booking_BOOKINGID}"  onclick="DisplayBooking_16_StatusPopUp()" style="margin:0px auto;width:100%;display:{BUSINESSBOOKING_16_BOOKING_STATUS_BTN_DISPLAY}" value="{BUSINESSBOOKING_16_BOOKINGSTATUS}"/>
+                          
+                            <div class="{BUSINESSBOOKING_16_BOOKING_DISPLAY_LABEL}">
+                                <div class="BoxIndentedStyle hide textcenter" style="margin:0px auto;display:{BUSINESSBOOKING_16_BOOKING_STATUS_DISPLAY};color:{BUSINESSBOOKING_16_BOOKING_STATUS_TEXT_COLOR};">{BUSINESSBOOKING_16_BOOKING_STATUS_TEXT}</div>
+                            </div>
+                             <div class="clear"></div>
+                            <div class="{BUSINESSBOOKING_16_BOOKING_DISPLAY_REQUEST_PICK_UP_BTN} textcenter" style="margin-top:4px;">
+                                <input type="button" id="btnBookingRequestPickedUp" name="btnBookingRequestPickedUp" onclick="BookingBusiness16BookingData()" value="Request PickUp" class="btnyellow " style="margin:0px auto;width:100%;" />
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+
+                            <div class="{BUSINESSBOOKING_16_IS_BUSINESS}">
+                        
+                            <div class="textcenter"></div>
+                            <div class="clear"></div>
+                            <input type="button" class="btnyellow custom_btn_height fr margin5 hide" href="javascript:void(0);" onclick="SaveBooking_16_Accept_Data(this)"  value="Save" />
+                            <div class="hide">
+                                <select class="Business_Booking_16_seleBookingStatusType"></select>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="clear">
+                    </div>
+                </div>
+                <div class='DivBookingStatus_16_Comments'>
+                             <div class='DivUserComments hide'>
+                               <div>
+                        <div class='fl imgRounded'>
+                            <img src='{BUSINESSBOOKING_Inner_16_CABIMG}' class='PinPopUpDescriptionWindowImage' /></div>
+                        <div class='DivInfoBoxDescriptionWindowLeftSideContent'>
+                            <div class='h2InfoBoxDescriptionWindowLandPhone textcenter' style="float: none;">
+                                <h2 class='h2PinPopup'>
+                                    <img src='{BUSINESSBOOKING_16_COUNTRYIMG}' class='PhoneCountryFlagIcon {IMG_BUSINESSBOOKING_16_COUNTRYIMG}' />
+                                    {BUSINESSBOOKING_16_TELEPHONE}</h2>
+                                    <div class='DivInfoBoxDescriptionWindowRating' style="margin: 0px auto;">
+                                        <div class='MainBigStar divBooking_16_Booking_MainBigStar_{Booking_Status_16_Booking_BOOKINGID}' style='margin: 0px auto;'>
+                                            <div class='Bigstar{BUSINESSBOOKING_16_RATING}'>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                            
+                                        <div class='clear'></div>
+                                        <div class='DivUserCommentsInner CustomScroll DivReviewInsidePopUp BoxIndentedStyle'></div>
+                            <div class='clear'></div>
+                            </div>
+                </div>
+                <div class="DivBusiness_Booking_Status_16_Passenger_Contact hide">
+                    <div class='DivContact'>
+                        <div class='DivContactInner clear'>
+                            <div>
+                                <div class='fl imgRounded'>
+                                    <img src='{BUSINESSBOOKING_16_CABIMG}' class='PinPopUpDescriptionWindowImage' />
+                                </div>
+                                <div class='fl DivInfoBoxDescriptionWindowLeftSideContent textcenter' style='float: none;'>
+                                    <h2 class='h2PinPopup'>
+                                        Contact Us</h2>
+                                    <div>
+                                        <h2 class='h2PinPopup'>
+                                        <img src='{BUSINESSBOOKING_16_COUNTRYIMG}' class='PhoneCountryFlagIcon {IMG_BUSINESSBOOKING_16_COUNTRYIMG}' />
+                                            {BUSINESSBOOKING_16_TELEPHONE}</h2>
+                                        <div class='MainBigStar divBooking_16_Booking_MainBigStar_{Booking_Status_16_Booking_BOOKINGID}' style='margin: 0px auto; display: inline-block;'>
+                                            <div class='Bigstar{BUSINESSBOOKING_16_RATING}'>
+                                            </div>
+                                        </div>
+                                        <div class="textcenter">
+                                         <a href="javascript:void(0);" style="margin-left:1px;" class="linkBusiness_16_Video linkBusiness_16_Video_{Booking_Status_16_Booking_BUSINESSID}_{Booking_Status_16_Booking_DRIVERID}_{Booking_Status_16_Booking_BOOKINGID}_{Booking_Status_16_Booking_PERSONID}" onclick=javascript:CallVideoFrom_16_BusinessContactScreen(this,'{Booking_Status_16_Video_Booking_BUSINESSID}')>
+                                            <img src="{Booking_Status_16_Booking_VIDEO_IMAGE}" id="Booking_Status_16_Booking_VIDEO_IMAGE_{Booking_Status_16_Booking_BUSINESSID}_{Booking_Status_16_Booking_DRIVERID}_{Booking_Status_16_Booking_BOOKINGID}_{Booking_Status_16_Booking_PERSONID}" style="width: 70px;" class="fl" />
+                                        </a>
+                                        <a href="javascript:void(0);" onclick="javascript:DisplayContactScreenToBusiness(this,{Booking_Status_16_IDS},{BUSINESSBOOKING_16_CURRENT_TELEPHONE})">
+                                            <img src="{Booking_Status_16_Booking_VOICE_IMAGE}" id="Booking_Status_16_Booking_VOICE_IMAGE_{Booking_Status_16_Booking_BUSINESSID}_{Booking_Status_16_Booking_DRIVERID}_{Booking_Status_16_Booking_BOOKINGID}_{Booking_Status_16_Booking_PERSONID}" style="width: 62px;margin-top:4px" />
+                                        </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class='clear'>
+                            </div>
+                            <form class='frmPassengerContactChatReply'>
+                             <div class='fl' style='width:100%;'>
+                                <hr  style='margin:4px !important;'/>
+                                <div class='fl' style='border-color:#894d05;'>
+                                    <img src='{BUSINESSBOOKING_CONTACT_US_16_CABIMG}'  style='width: 35px;height: 35px;'/>
+                                </div>
+                                <textarea id='textareaPassengerContactChattext' rows='3' name='textareaPassengerContactChattext' class='borderRadius fr marginleft5' style='border-color:#894d05;width: 203px;' placeholder='Write you message here...'></textarea>
+                             </div>
+                             <div class='fr' style='margin-top:2px !important;'>
+                                 <a onclick='Send_16_ChatMessage({Booking_Status_16_Booking_BUSINESSID},this,{Booking_Status_16_Booking_DRIVERID},{Booking_Status_16_Booking_PERSONID})' class='fl'>
+                                    <img src="{Booking_Status_16_Booking_MESSAGE_IMAGE}" id="Booking_Status_16_Booking_MESSAGE_IMAGE_{Booking_Status_16_Booking_BUSINESSID}_{Booking_Status_16_Booking_DRIVERID}_{Booking_Status_16_Booking_BOOKINGID}_{Booking_Status_16_Booking_PERSONID}" style="width: 89px;" /></a>
+                                <a href='javascript:void(0);' onclick='javascript:ClosePassengerContactWindow($(this));' class='linkCancelPopup'>Cancel</a>
+                             </div>
+                             </form>
+                             <div class='clear'></div>
+                        </div>
+                        <div class='clear'>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+                
+                <div class="Div_Booking_Status_Accepted ">
+                    <div class="fr Div_Booking_Status_16__Picked_and_Noshow {Div_Booking_Status_Picked_and_Noshow_visibility}">
+                        <input type="button" id="btn_Booking_Status_16_BookingNonShow" class="btnyellow fr"
+                            name="btn_Booking_Status_16_BookingNonShow" value="No Show" style="margin: 3px;" />
+                        <input type="button" id="btn_Booking_Status_16_BookingTrackNow" class="btnyellow fr"
+                            name="btn_Booking_Status_16_BookingTrackNow" value="Picked Up" style="margin: 3px;"
+                            onclick='javascript:void(0);' />
+                    </div>
+                    <div class="clear">
+                    </div>
+                    <div class="fr Div_Booking_Status_16_Arrived {Div_Booking_Status_Arrived_visibility}">
+                        <input type="button" id="btn_Booking_Status_16_Booking_Arrived" class="btnyellow"
+                            name="btn_Booking_Status_16_Booking_Arrived" value="Arrived" style="margin: 3px;"
+                            onclick="UpdateBooking_Status_16_Data(this)" />
+                    </div>
+                </div>
+                <div class="Div_Booking_Status_16_BookingFeedBack clear {Div_Booking_Status_BookingFeedBack_visibility}"
+                    style="margin-left: 10px;">
+                    <label class="Div_Booking_Status_16_ActualCost fl">
+                    </label>
+                    <div class="clear">
+                    </div>
+                    <input type="text" id="txt_Booking_Status_16_BookingActualCost" name="txt_Booking_Status_16_BookingActualCost"
+                        class="fl" style="width: 80px;" placeholder="Actual cost" />
+                    <input type="hidden" id="hidden_Booking_Status_16_PassengerEstimatedCost" name="hidden_Booking_Status_16_PassengerEstimatedCost" />
+                    <div class="clear">
+                    </div>
+                    <label class="fl" style="margin: 8px 0px !important; padding: 0px !important;">
+                        Driver Rating:</label>
+                    <div class="rating-f rating-enable fl margintop5" style="margin-right: 10px;">
+                        <select id="SeleDriver_Booking_Status_16_FeedbackRating" name="SeleDriver_Booking_Status_16_FeedbackRating">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>
+                    </div>
+                    <input type="text" id="txt_Booking_Status_16_BookingDriverNote" name="txt_Booking_Status_16_BookingDriverNote"
+                        class="fl" style="width: 225px;" placeholder="Driver Notes" />
+                    <input type="button" id="btn_Booking_Status_16_SaveBookingFeedBackDetails" name="btn_Booking_Status_16_SaveBookingFeedBackDetails"
+                        class="btnyellow fl marginleft" value="Save" />
+                </div>
+                <div class="Div_Booking_Status_16_NonShow clear {Div_Booking_Status_16_NonShow_visibility}">
+                    <label class="fl" style="margin: 5px 10px !important; padding: 0px !important;">
+                        Driver Rating:</label>
+                    <div class="rating-f rating-enable fl margintop5" style="margin-right: 10px;">
+                        <select id="Sele__Booking_Status_16_NoShowRating" name="Sele__Booking_Status_16_NoShowRating">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5" selected="selected">5</option>
+                        </select>
+                    </div>
+                    <input type="text" id="txt_Booking_Status_16_NonShowDriverNote" name="txt_Booking_Status_16_NonShowDriverNote"
+                        class="div_Booking_lblfromAddress_txtbox fl" placeholder="Driver Notes" />
+                    <input type="button" id="btn_Booking_Status_16_SaveBookingNonShow" name="btn_Booking_Status_16_SaveBookingNonShow"
+                        class="btnyellow fl marginleft" value="Save" />
+                </div>
+            </div>
+        </div>
+    <!-- Booking Status 16 PopUp Template End -->
+    
+	</div>
+  </ion-content>
+</ion-modal-view>
+</div>

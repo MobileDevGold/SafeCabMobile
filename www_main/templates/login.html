@@ -1,0 +1,32 @@
+<ion-modal-view class="loginModal">
+  <ion-header-bar>
+    <h1 class="title">Login</h1>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closeLogin()">Close</button>
+    </div>
+  </ion-header-bar>
+  <ion-content>
+    <form ng-submit="doLogin()" ng-controller="PassengerLoggedInController" novalidate angular-validator>
+	  <div class="hide DivUserLoggedMessage textcenter" style="color:red;"></div>
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Username</span>
+		  <div>
+          <input type="text" id="txtUserName" ng-model="loginData.username" required>
+		  </div>
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Passcode</span>
+		  <div>
+          <input type="password" id="txtPasscode" maxlength="4" ng-required="true" class="form-control">
+		  </div>
+        </label>
+        <label class="item" >
+          <button class="button button-positive" type="submit">Log in</button>
+        </label>
+		
+      </div>
+    </form>
+	<button class="button button-clear button-positive" ng-controller="RemindMeController" ng-click="RemindMe()">Remind Me</button>
+  </ion-content>
+</ion-modal-view>

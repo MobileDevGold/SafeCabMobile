@@ -1,0 +1,137 @@
+<div class="BookingEntityType">
+<ion-modal-view class="PinPopupE1Modal123" style="width: 84%; height: auto; top: 5%; left: 10%; right: 10%; bottom: 5%;">
+  <!--<ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closePinPopUpE1()">Close</button>
+    </div>
+  </ion-header-bar>-->
+  <ion-content>
+  <div class="DivQuoteData">
+  <div class="TMPLT_DivBusinessPopUpBooking_16_Title DivPopUpTitle" style="width: 265px;">
+            <input type="hidden" class="hidden_Booking_Status_16_Booking_BUSINESSID" value="{Booking_Status_16_Booking_BUSINESSID}" />
+            <input type="hidden" class="hidden_Booking_Status_16_Booking_DRIVERID" value="{Booking_Status_16_Booking_DRIVERID}" />
+            <input type="hidden" class="hidden_Booking_Status_16_Booking_PERSONID" value="{Booking_Status_16_Booking_PERSONID}" />
+            <input type="hidden" class="hidden_Booking_Status_16_Booking_BOOKINGID" value="{Booking_Status_16_Booking_BOOKINGID}" />
+            <input type="hidden" class="hidden_Booking_Status_16_Booking_VEHICLETYPE" value="{Booking_Status_16_Booking_VEHICLETYPE}" />
+            <div class='DivVerticalMiddle'>
+                <div style='margin: 2px 0px 0px 5px; float: left; width: 23px; height: 23px; background-color: #EF9300;
+                    border-radius: 3px; -webkit-border-radius: 3px; -moz-border-radius: 3px; border: 2px solid #FFF8D1;
+                    text-align: center; box-shadow: 1px 2px 2px #808080; -webkit-box-shadow: 1px 2px 2px #808080;
+                    -moz-box-shadow: 1px 2px 2px #808080;'>
+                    <a href='javascript:void(0);' onclick='javascript:ShowStreetView({LAT},{LNG});'>
+                        <img src='{BUSINESSBOOKING_16_CABIMG}' style='width: 23px; vertical-align: middle;height:19px;' />
+                    </a>
+                </div>
+                <div class='DivInfoBoxTitleContentWidth'>
+                    <h5 class='DivInfoBoxTitleContentText'>
+                        {BUSINESSBOOKINGTITLE}</h5>
+                    <div>
+                        <div class='MainStar fl divBooking_16_Booking_MainStar_{Booking_Status_16_Booking_BOOKINGID}' style='margin-left: 23px;'>
+                            <div class='smallstar{BUSINESSBOOKING_16_RATING} fl '>
+                            </div>
+                        </div>
+                        <div class="fl divBooking_16_Booking_Review_{Booking_Status_16_Booking_BOOKINGID}" style="padding:0px 3px;">{BUSINESSBOOKING_16_COMMENTCOUNT}</div>Reviews
+                    </div>
+                </div>
+                <div class='DivInfoBoxRightContentWidth'>
+                    <a href='javascript:void(0);' value='linkValue' class='linkDispalyPopFullContent'
+                        to='down'>
+                        <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth PopupArrowImageRight hide'  onclick="javascript:showPopUpDesc(this)" src="img/Map_pins/arrow_right.png"/>
+                        <img class='DivArrowImage DivInfoBoxTitleRightImgBackgroundWidth PopupArrowImageDown' onclick="javascript:hidePopUpDesc(this)" src="img/Map_pins/arrow_down.png" />
+                    </a>
+                </div>
+            </div>
+            <div class='DivBookingStatus_16 BusinessInfowindow margintop5' style="width: 250px;">
+                <div class='DivParentPopUpDescription DivInlineBlock_100_Percent_width'>
+                <input type="hidden" class="hiddenBusinessBooking_16_BusinessId" value="{Booking_Status_16_Booking_BUSINESSID}" />
+                <input type="hidden" class="hiddenBusinessBooking_16_DriverId" value="{Booking_Status_16_Booking_DRIVERID}" />
+                <input type="hidden" class="hiddenBusinessBooking_16_BookingId" value="{Booking_Status_16_Booking_BOOKINGID}" />
+                <input type="hidden" class="hiddenBusinessBooking_16_PersonId" value="{Booking_Status_16_Booking_PERSONID}" />
+                    <div>
+                        <div class='fl imgRounded' style="display:{BUSINESSBOOKING_16_UPLOAD_TRACKING_DIV}">
+                                <a onclick="OpenBusinessTrackingFileUploadOptions()">
+                                    <img src='{BUSINESSBOOKING_Inner_16_CABIMG}' class='PinPopUpDescriptionWindowImage BusinessBookingTrackingImage' />
+                                </a>
+                        </div>
+                        <div class='DivInfoBoxDescriptionWindowLeftSideContent'>
+                            <div class='h2InfoBoxDescriptionWindowLandPhone textcenter' style="float: none;">
+                                <h2 class='h2PinPopup'>
+                                    <img src='{BUSINESSBOOKING_16_COUNTRYIMG}' class='PhoneCountryFlagIcon {IMG_BUSINESSBOOKING_16_COUNTRYIMG}' />
+                                    {BUSINESSBOOKING_16_TELEPHONE}</h2>
+                                <a href='javascript:void(0);' onclick='javascript:Show_BUSINESSBOOKING_16_BusinessCommetns({Booking_Status_16_Booking_BUSINESSID},this,{Booking_Status_16_Booking_DRIVERID},{Booking_Status_16_Booking_BOOKINGID},{Booking_Status_16_Booking_PERSONID})'>
+                                    <div class='DivInfoBoxDescriptionWindowRating' style="margin: 0px auto;">
+                                        <div class='MainBigStar divBooking_16_Booking_MainBigStar_{Booking_Status_16_Booking_BOOKINGID}' style='border-bottom: 1px solid orange; margin: 0px auto;'>
+                                            <div class='Bigstar{BUSINESSBOOKING_16_RATING} '>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='clear'>
+                    </div>
+                    <div class='fl BoxIndentedStyle textcenter Div16BookingRequiredBookingDateTime' style="width: 68%;">
+                        {BUSINESSBOOKING_16_BUSINESSREQUIREDDATETIME}</div>
+                    <div class='fl Div16BookingRequiredBookingDisabledAccess' style="padding-left: 4px;">
+                        <img src='{BUSINESSBOOKING_16_BUSINESSREDISABLEDACCESSIMG}' /></div>
+                    <div class='fl Div16BookingRequiredBookingFemaleDriver' style="padding-left: 4px;">
+                        <img src='{BUSINESSBOOKING_16_BUSINESSREFEMALEDRIVERIMG}' /></div>
+                    <div class='clear'>
+                    </div>
+                    <div>
+                        <div class="DivBookingPopUPlbl">
+                            <label style="margin: 0px !important; padding: 0px !important;" class="fl">
+                                From:
+                            </label>
+                        </div>
+                        <div class='DivBookingPopUPText BoxIndentedStyle PinDetailsTextEllipsis Div16BookingFromAddress' title="{Booking_Status_16_BUSINESSFROMADDRESS_Booking_Alt_Text}">
+                            {BUSINESSBOOKING_16_BUSINESSFROMADDRESS}</div>
+                        <div class="clear">
+                        </div>
+                        <div class="DivBookingPopUPlbl">
+                            <label style="margin: 0px !important; padding: 0px !important;" class="fl">
+                                To:
+                            </label>
+                        </div>
+                        <div class='DivBookingPopUPText BoxIndentedStyle PinDetailsTextEllipsis Div16BookingToAddress' title="{Booking_Status_16_BUSINESSTOADDRESS_Booking_Alt_Text}">
+                            {BUSINESSBOOKING_16_BUSINESSTOADDRESS}</div>
+                        <div class="clear">
+                        </div>
+                        <div class="DivBookingPopUPlbl">
+                            <label style="margin: 0px !important; padding: 0px !important;" class="fl">
+                                Note:</label></div>
+                        <div class='DivBookingPopUPText BoxIndentedStyle PinDetailsTextEllipsis Div16BookingNotes' title="{Booking_Status_16_BUSINESSNOTES_Booking_Alt_Text}">
+                            {BUSINESSBOOKING_16_BUSINESSNOTES}</div>
+                        <div class="clear">
+                        </div>
+                        <div>
+                            <div class="fl DivBookingPopUPlbl"> <label style="margin: 0px !important; padding: 0px !important;margin-left: 15px;padding-top: 5px;" class="fl">
+                                Type:</label></div>
+                            <div class="fl"><img src="{BUSINESSBOOKING_16_BOOKING_STATUS_VEHICLETYPE}" class="{BUSINESSBOOKING_16_BOOKING_STATUS_VEHICLETYPE_CSS} fl"
+                            style="height: 20px;padding-top: 5px;" /></div>
+                            <div class="fl DivBookingPopUPlbl" style="padding-left:5px;width: 17%;padding-top: 5px;"> <label style="margin: 0px !important; padding: 0px !important;" class="fl">
+                                Cost:</label></div>
+                            <div class="fl BoxIndentedStyle" style="width:80px;">{BUSINESSBOOKING_16_BUSINESSESTIMATEDCOST}</div>
+                        </div>
+                        <div class="clear"></div>
+                        <div>
+						<div class="{BUSINESSBOOKING_16_BOOKING_DISPLAY_LABEL}">
+                                <div class="BoxIndentedStyle hide textcenter" style="margin:0px auto;display:{BUSINESSBOOKING_16_BOOKING_STATUS_DISPLAY};color:{BUSINESSBOOKING_16_BOOKING_STATUS_TEXT_COLOR};">{BUSINESSBOOKING_16_BOOKING_STATUS_TEXT}</div>
+                            </div>
+                             <div class="clear"></div>
+                            <div class="{BUSINESSBOOKING_16_BOOKING_DISPLAY_REQUEST_PICK_UP_BTN} textcenter" style="margin-top:4px;">
+                                <input type="button" id="btnBookingRequestPickedUp" name="btnBookingRequestPickedUp" onclick="BookingBusiness16BookingData({Booking_Status_16_Booking_BUSINESSID},{Booking_Status_16_Booking_DRIVERID},{Booking_Status_16_Booking_BOOKINGID})" value="Request PickUp" class="btnyellow " style="margin:0px auto;width:100%;" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    
+                </div>
+            </div>
+                
+                </div>
+			</div>
+  </ion-content>
+</ion-modal-view>
+</div>

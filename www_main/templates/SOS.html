@@ -1,0 +1,84 @@
+<div class="SOSmodal">
+<ion-modal-view class="SOSModal" style="width: 85%; height: auto; top: 10%; left: 10%; right: 10%; padding-top:30px;bottom: 5%;background-color: transparent !important;">
+  <!--<ion-header-bar>
+    <div class="buttons">
+      <button class="button button-clear" ng-click="closePinPopUpE1()">Close</button>
+    </div>
+  </ion-header-bar>-->
+  <i class="icon ion-android-close close-modal-sos"  ng-click="closeSOS()"></i>
+  <ion-content>
+  
+  <div class="divSOSData" ng-controller="SOSController" id="TestSOSPage">
+  <!-- SOS pin data -->
+  <div class="DivSOSParentPopUp customGrid_style" style="margin-top:20px;">
+    <div style="font-size: 20px; color: #1F1402;cursor:move;" class="textcenter">
+        SOS</div>
+    <a class="DivCloseImage" href="javascript:void(0);" onclick="CloseSOSWindow(this)"
+        style="top: 10px;cursor:pointer;"></a>
+    <div class="DivPopUpInnerBoxShadow padding5 margintop10" style="background-color: #F3F3F3;
+        display: inline-block; width: 255px;">
+        <div class="DivSOSMainScreen" style="display:inline-block;">
+            <div>
+                <div class='fl imgRounded ImgPersonSOSUploadData'>
+                    <img src="" class='PinPopUpDescriptionWindowImage ImgSOSPerson'  />
+                </div>
+                <div class="textcenter">
+                <input type="button" class="btnyellow btnStartTracking" ng-click="PersonSOSTracking()" value="Track me" style="margin-top:43px;" />
+                <input type="button" class="btnyellow btnStopTracking" ng-click="PersonSOSStopTracking()" value="Stop Tracking" style="margin-top:43px;" />
+                 <input type="file" id="FileSOSPersonLocationTracking" name="FileSOSPersonLocationTracking" onchange="SOSPersonTrakingImage(event)" style="display: none;" />
+            </div>
+            <div class="clear">
+            </div>
+                
+            </div>
+            <div class='DivInfoBoxDescriptionWindowLeftSideContent fl'>
+                    <div class='textcenter fl'>
+                        <p class="PElementInfoBoxDescriptionWindow BoxIndentedStyle SOSPersonCurrentLocation" style="width:230px;display:inline-block;"></p>
+                    </div>
+                </div>
+            <div class="textcenter" style="margin-top:10px;">
+                <input type="button" class="btnyellow btnEmergencyContacts" ng-click="ShowSOSEmergencyContactDiv()" value="Emergency Contacts"  style="margin-top:-7px;"/>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="fr DivSoicalMedia hide" style="margin-top:10px;width:100%;">
+            <hr />
+            <div class="textcenter" style="font-size: 18px;color: #1F1402;">Contact Office</div>
+            <div class="clear"></div>
+            <div class="textcenter">
+            <a href="javascript:void(0);" class="linkVoicePart" onclick="DisplayContactScreenToDriver(this)"><img src="https://www.safecab.com/DATA/images/New_bits/NoPresenceVoice.png" style="width: 89px;" class="ImgVoiceData"></a>
+                <a href="javascript:void(0);" class="linkVideoPart Disabled_a_click_event" onclick="DisplayVideoCall(this)"><img src="https://www.safecab.com/DATA/images/New_bits/NoPresenceVideo.png" style="width: 100px;" class="ImgVideoData"></a>
+                </div>
+            </div>
+             <div class="clear">
+            </div>
+            <hr />
+            <div class="textcenter" style="font-size: 18px;color: #1F1402;">Contact Everyone Close By</div>
+            <div class="clear"></div>
+            <textarea id='textareaSOSChatMessage' rows='2' name='textareaSOSChatMessage' class='borderRadius fl'
+                style='width: 238px;' >Please come to my location NOW as I require assistance</textarea>
+            <div class="clear">
+            </div>
+            <a ng-click='SendSOSMessageFromSOSWindow();' class='fr' style="margin-top:5px;">
+                <img src="https://www.safecab.com/DATA/images/New_bits/message.png" style='width: 100px;' class="ImgUserMessage"/></a>
+        </div>
+        <div class="DivSOSEmergencyContact hide" style="width: 100%;height:205px;">
+            <h3 class='h2PinPopup textcenter'>
+                Emergency Contact List</h3>
+            <hr />
+            <div class='DivBusinessPopUpChat'>
+                <div class='DivPersonTrackingFriendList textcenter' style='padding: 5px;'>
+                </div>
+            </div>
+            <a onclick="javascript:CloseSOSEmergencyContact(this);" class="fr linkCancel">Cancel</a>
+        </div>
+    </div>
+</div>
+
+  <!-- -->
+	</div>
+</div>
+
+  </ion-content>
+</ion-modal-view>
+</div>
